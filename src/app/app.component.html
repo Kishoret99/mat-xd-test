@@ -3,6 +3,11 @@
     {{movie | json}}
   </li>
 </ul>
+<ul>
+  <li class="text" *ngFor="let song of songs | async">
+    {{song | json}}
+  </li>
+</ul>
 <div class="SongList_Class">
   <div id="SongList">
     <div class="Navigation_Drawer___Bottom___R_Class">
@@ -97,7 +102,7 @@
             </div>
         </mat-nav-list> -->
           <div class="Navigation_Drawer___Elements___Class">
-          <div  *ngFor="let i of songs" matRipple [matRippleUnbounded]="false" class="Navigation_Drawer___Elements___A0_Group_4_Class">
+          <div  *ngFor="let i of s" matRipple [matRippleUnbounded]="false" class="Navigation_Drawer___Elements___A0_Group_4_Class">
             <div  class="List___Two_Line___Image_11_Class">
               <svg class="Box">
                 <rect class="Box_Class" rx="0" ry="0" x="0" y="0" width="360" height="72">

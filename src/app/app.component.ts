@@ -16,7 +16,8 @@ export class AppComponent {
 
   movie: Observable<Movie>;
   movies;
-  songs = new Array(7);
+  songs;
+  s = new Array(4)
   title = 'mat-xd-test';
   
   private movieDoc: AngularFirestoreDocument<Movie>;
@@ -24,8 +25,21 @@ export class AppComponent {
 
   constructor(
     private db: AngularFirestore
-  ) {
-    this.movies = db.collection('movies').valueChanges();
-    
+  ) {}
+
+
+  ngOnInit() {
+    const data = [
+      {
+
+      }
+    ];
+    this.db.collection('banners').add({
+      
+    })
+  }
+
+  updateSongs() {
+
   }
 }
