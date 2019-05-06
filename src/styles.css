@@ -1,124 +1,50 @@
-/* You can add global styles to this file, and also import other style files */
-
 body {
     margin: 0;
     padding: 0;
 }
 :root {
-    --web-view-ids: SongList;
+    --web-view-ids: HomeScreen;
 }
-#SongList * {
+#HomeScreen * {
     margin: 0;
     padding: 0;
 }
-.SongList_Class {
+.HomeScreen_Class {
     position: absolute;
     box-sizing: border-box;
     background: #E5E5E5;
     width: 100%;
-    height: 860px;
+    height: 810px;
     background-color: rgba(255,255,255,1);
-    overflow: hidden;
+    overflow-x: hidden;
+    overflow-y: auto;
     margin: 0;
     padding: 0;
     opacity: 1;
-    --web-view-name: SongList;
-    --web-view-id: SongList;
+    --web-view-name: HomeScreen;
+    --web-view-id: HomeScreen;
     --web-enable-deep-linking: true;
-}
-.Navigation_Drawer___Bottom___R_Class {
-    opacity: 1;
-    position: absolute;
-    width: 100%;
-    height: 856px;
-    left: 0px;
-    top: 0px;
-    overflow: visible;
-}
-.Navigation_Drawer___Bottom___R_A0_Group_2_Class {
-    opacity: 1;
-    position: absolute;
-    width: 360px;
-    height: 856px;
-    left: 50%;
-    transform: translateX(-50%);
-    top: 0px;
-    overflow: visible;
-}
-.Surface_Class {
-    opacity: 0.35;
-    fill: rgba(0,0,0,1);
-}
-.Surface {
-    position: absolute;
-    overflow: visible;
-    width: 360px;
-    height: 640px;
-    left: 0px;
-    top: 0px;
-}
-.Surface_A0_Rectangle_2_Class {
-    opacity: 1;
-    filter: drop-shadow(0px 16px 24px rgba(0, 0, 0, 0.2));
-    fill: rgba(255,255,255,1);
-}
-.Surface_A0_Rectangle_2 {
-    position: absolute;
-    overflow: visible;
-    width: 432px;
-    height: 608px;
-    left: 0px;
-    top: 320px;
 }
 .Image_Class {
     opacity: 1;
-    filter: blur(0px);
-    fill: url(#assets/Image_A0_Rectangle_4_pattern);
+    filter: drop-shadow(0px 3px 6px rgba(0, 0, 0, 0.161));
+    fill: url(#Image_A2_Rectangle_2_pattern);
 }
 .Image {
     position: absolute;
     overflow: visible;
-    width: 360px;
-    height: 320px;
-    left: 0px;
-    top: 0px;
+    width: 358px;
+    height: 192px;
+    left: 10px;
+    top: 87px;
 }
-.Group_5_Class {
+.Tab___Elements___Text_Tab___Ac_Class {
     opacity: 1;
     position: absolute;
-    width: 360px;
-    height: 519px;
-    left: 0px;
-    top: 320px;
-    overflow: visible;
-}
-.Navigation_Drawer___Elements___Class {
-    opacity: 1;
-    position: absolute;
-    width: 100%;
-    height: 435px;
-    left: 50%;
-    transform: translateX(-50%);
-    top: 84px;
-    overflow: hidden;
-}
-.Navigation_Drawer___Elements___A0_Group_4_Class {
-    opacity: 1;
-    position: relative;
-    width: 360px;
-    height: 72px;
-    left: 0px;
-    top: 0px;
-    /* overflow: visible; */
-}
-.List___Two_Line___Image_11_Class {
-    opacity: 1;
-    position: absolute;
-    width: 100%;
-    height: 72px;
-    left: 50%;
-    transform: translateX(-50%);
-    top: 0px;
+    width: 652.156px;
+    height: 224.6px;
+    left: 9.776px;
+    top: 261px;
     overflow: visible;
 }
 .Box_Class {
@@ -128,106 +54,93 @@ body {
 .Box {
     position: absolute;
     overflow: visible;
-    width: 360px;
-    height: 72px;
-    left: 0px;
+    width: 68.631px;
+    height: 48px;
+    left: 6.224px;
     top: 0px;
 }
-.Divider_Class {
+.Selected_Class {
     opacity: 1;
-    fill: rgba(227,227,227,1);
+    fill: rgba(98,0,238,1);
 }
-.Divider {
+.Selected {
     position: absolute;
     overflow: visible;
-    width: 272px;
-    height: 1px;
-    left: 88px;
-    top: 71px;
-}
-.Cards___Elements___Media___1_1_Class {
-    opacity: 1;
-    position: absolute;
-    width: 72px;
-    height: 72px;
+    width: 120px;
+    height: 2px;
     left: 0px;
-    top: 0px;
-    overflow: visible;
+    top: 46px;
 }
-.Box_A0_Rectangle_7_Class {
-    opacity: 1;
-    fill: transparent;
-}
-.Box_A0_Rectangle_7 {
-    position: absolute;
-    overflow: visible;
-    width: 72px;
-    height: 72px;
-    left: 0px;
-    top: 0px;
-}
-.Icon___Favorite___Filled_Class {
-    opacity: 0.5;
-    position: absolute;
-    width: 24px;
-    height: 24px;
-    left: 320px;
-    top: 24px;
-    overflow: visible;
-}
-.Box_A0_Rectangle_8_Class {
-    opacity: 1;
-    fill: transparent;
-}
-.Box_A0_Rectangle_8 {
-    position: absolute;
-    overflow: visible;
-    width: 24px;
-    height: 24px;
-    left: 0px;
-    top: 0px;
-}
-.Path_407_Class {
-    opacity: 1;
-    fill: rgba(0,0,0,1);
-}
-.Path_407 {
-    transform: matrix(1,0,0,1,0,0);
-    overflow: visible;
-    position: absolute;
-    top: 3px;
-    left: 2px;
-    width: 20px;
-    height: 18.35px;
-}
-.Subtitle_1_Class {
+.TAB_Class {
     opacity: 1;
     position: absolute;
-    left: 72px;
-    top: 19px;
+    left: 3.5px;
+    top: 15px;
     box-sizing: border-box;
     margin: 0;
     padding: 0;
     overflow: visible;
-    width: 170px;
+    width: 114px;
     white-space: nowrap;
     text-align: left;
     font-family: Roboto;
     font-style: normal;
     font-weight: normal;
     font-size: 14px;
-    color: rgba(0,0,0,0.6);
+    color: rgba(98,0,238,1);
+    letter-spacing: 0.89px;
+}
+.Cards___List_2_up___Filled___I_Class {
+    opacity: 1;
+    position: absolute;
+    width: 100%;
+    height: 154.6px;
+    left: 0.224px;
+    top: 70px;
+    overflow-x: scroll;
+    overflow-y: hidden;
+}
+.Cards___List_2_up___Filled___I_A2_Group_2_Class {
+    opacity: 1;
+    position: absolute;
+    width: 111.932px;
+    height: 148.6px;
+    left: 4.5px;
+    top: 3.5px;
+    overflow: visible;
+}
+.Surface_Class {
+    opacity: 1;
+    filter: drop-shadow(0px 1px 3px rgba(0, 0, 0, 0.2));
+    fill: rgba(255,255,255,1);
+}
+.Surface {
+    position: absolute;
+    overflow: visible;
+    width: 120.932px;
+    height: 157.6px;
+    left: 0px;
+    top: 0px;
 }
 .Body_2_Class {
     opacity: 1;
     position: absolute;
-    left: 71.977px;
-    top: 42px;
+    width: 37px;
+    height: 14px;
+    left: 19px;
+    top: 122.6px;
+    overflow: visible;
+}
+.Body_2_A2_Text_2_Class {
+    opacity: 1;
+    position: absolute;
+    left: 0px;
+    top: 0px;
     box-sizing: border-box;
     margin: 0;
     padding: 0;
     overflow: visible;
-    width: 198px;
+    width: 38px;
     white-space: nowrap;
     text-align: left;
     font-family: Roboto;
@@ -237,152 +150,364 @@ body {
     color: rgba(0,0,0,0.6);
     letter-spacing: 0.17px;
 }
-.ID1_Class {
+.Image_A2_Path_1_Class {
+    opacity: 1;
+    fill: url(#Image_A2_Path_2_pattern);
+}
+.Image_A2_Path_1 {
+    transform: matrix(1,0,0,1,0,0);
+    overflow: visible;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 111.932px;
+    height: 110.694px;
+}
+.Cards___List_2_up___Filled___I_A2_Group_4_Class {
     opacity: 1;
     position: absolute;
-    left: 36px;
-    top: 25px;
+    width: 111.932px;
+    height: 148.6px;
+    left: 135.5px;
+    top: 3.5px;
+    overflow: visible;
+}
+.Surface_A2_Rectangle_6_Class {
+    opacity: 1;
+    filter: drop-shadow(0px 1px 3px rgba(0, 0, 0, 0.2));
+    fill: rgba(255,255,255,1);
+}
+.Surface_A2_Rectangle_6 {
+    position: absolute;
+    overflow: visible;
+    width: 120.932px;
+    height: 157.6px;
+    left: 0px;
+    top: 0px;
+}
+.Body_2_A2_Group_5_Class {
+    opacity: 1;
+    position: absolute;
+    width: 37px;
+    height: 14px;
+    left: 19px;
+    top: 122.6px;
+    overflow: visible;
+}
+.Body_2_A2_Text_3_Class {
+    opacity: 1;
+    position: absolute;
+    left: 0px;
+    top: 0px;
     box-sizing: border-box;
     margin: 0;
     padding: 0;
     overflow: visible;
-    width: 10px;
+    width: 38px;
     white-space: nowrap;
-    line-height: 18px;
-    margin-top: -1px;
     text-align: left;
     font-family: Roboto;
     font-style: normal;
     font-weight: normal;
-    font-size: 16px;
-    color: rgba(102,102,102,1);
+    font-size: 12px;
+    color: rgba(0,0,0,0.6);
+    letter-spacing: 0.17px;
 }
-.Navigation_Drawer___Elements___A0_Group_8_Class {
+.Image_A2_Path_3_Class {
     opacity: 1;
-    position: absolute;
-    width: 360px;
-    height: 72px;
-    left: 0px;
-    top: 92px;
-    overflow: visible;
+    fill: url(#Image_A2_Path_4_pattern);
 }
-.List___Two_Line___Image_11_A0_Group_9_Class {
-    opacity: 1;
-    position: absolute;
-    width: 100%;
-    height: 72px;
-    left: 50%;
-    transform: translateX(-50%);
-    top: 0px;
-    overflow: visible;
-}
-.Box_A0_Rectangle_9_Class {
-    opacity: 1;
-    fill: transparent;
-}
-.Box_A0_Rectangle_9 {
-    position: absolute;
-    overflow: visible;
-    width: 360px;
-    height: 72px;
-    left: 0px;
-    top: 0px;
-}
-.Divider_A0_Rectangle_10_Class {
-    opacity: 1;
-    fill: rgba(227,227,227,1);
-}
-.Divider_A0_Rectangle_10 {
-    position: absolute;
-    overflow: visible;
-    width: 272px;
-    height: 1px;
-    left: 88px;
-    top: 71px;
-}
-.Cards___Elements___Media___1_1_A0_Group_10_Class {
-    opacity: 1;
-    position: absolute;
-    width: 72px;
-    height: 72px;
-    left: 0px;
-    top: 0px;
-    overflow: visible;
-}
-.Box_A0_Rectangle_11_Class {
-    opacity: 1;
-    fill: transparent;
-}
-.Box_A0_Rectangle_11 {
-    position: absolute;
-    overflow: visible;
-    width: 72px;
-    height: 72px;
-    left: 0px;
-    top: 0px;
-}
-.Icon___Favorite___Filled_A0_Group_11_Class {
-    opacity: 0.5;
-    position: absolute;
-    width: 24px;
-    height: 24px;
-    left: 320px;
-    top: 24px;
-    overflow: visible;
-}
-.Box_A0_Rectangle_12_Class {
-    opacity: 1;
-    fill: transparent;
-}
-.Box_A0_Rectangle_12 {
-    position: absolute;
-    overflow: visible;
-    width: 24px;
-    height: 24px;
-    left: 0px;
-    top: 0px;
-}
-.Path_407_A0_Path_2_Class {
-    opacity: 1;
-    fill: rgba(0,0,0,1);
-}
-.Path_407_A0_Path_2 {
+.Image_A2_Path_3 {
     transform: matrix(1,0,0,1,0,0);
     overflow: visible;
     position: absolute;
-    top: 3px;
-    left: 2px;
-    width: 20px;
-    height: 18.35px;
+    top: 0px;
+    left: 0px;
+    width: 111.932px;
+    height: 110.694px;
 }
-.Subtitle_1_A0_Text_4_Class {
+.Cards___List_2_up___Filled___I_A2_Group_6_Class {
     opacity: 1;
     position: absolute;
-    left: 72px;
-    top: 19px;
+    width: 111.932px;
+    height: 148.6px;
+    left: 266.5px;
+    top: 3.5px;
+    overflow: visible;
+}
+.Surface_A2_Rectangle_7_Class {
+    opacity: 1;
+    filter: drop-shadow(0px 1px 3px rgba(0, 0, 0, 0.2));
+    fill: rgba(255,255,255,1);
+}
+.Surface_A2_Rectangle_7 {
+    position: absolute;
+    overflow: visible;
+    width: 120.932px;
+    height: 157.6px;
+    left: 0px;
+    top: 0px;
+}
+.Body_2_A2_Group_7_Class {
+    opacity: 1;
+    position: absolute;
+    width: 37px;
+    height: 14px;
+    left: 19px;
+    top: 122.6px;
+    overflow: visible;
+}
+.Body_2_A2_Text_4_Class {
+    opacity: 1;
+    position: absolute;
+    left: 0px;
+    top: 0px;
     box-sizing: border-box;
     margin: 0;
     padding: 0;
     overflow: visible;
-    width: 170px;
+    width: 38px;
+    white-space: nowrap;
+    text-align: left;
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 12px;
+    color: rgba(0,0,0,0.6);
+    letter-spacing: 0.17px;
+}
+.Image_A2_Path_5_Class {
+    opacity: 1;
+    fill: url(#Image_A2_Path_6_pattern);
+}
+.Image_A2_Path_5 {
+    transform: matrix(1,0,0,1,0,0);
+    overflow: visible;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 111.932px;
+    height: 110.694px;
+}
+.Cards___List_2_up___Filled___I_A2_Group_8_Class {
+    opacity: 1;
+    position: absolute;
+    width: 111.932px;
+    height: 148.6px;
+    left: 397.5px;
+    top: 3.5px;
+    overflow: visible;
+}
+.Surface_A2_Rectangle_8_Class {
+    opacity: 1;
+    filter: drop-shadow(0px 1px 3px rgba(0, 0, 0, 0.2));
+    fill: rgba(255,255,255,1);
+}
+.Surface_A2_Rectangle_8 {
+    position: absolute;
+    overflow: visible;
+    width: 120.932px;
+    height: 157.6px;
+    left: 0px;
+    top: 0px;
+}
+.Body_2_A2_Group_9_Class {
+    opacity: 1;
+    position: absolute;
+    width: 37px;
+    height: 14px;
+    left: 19px;
+    top: 122.6px;
+    overflow: visible;
+}
+.Body_2_A2_Text_5_Class {
+    opacity: 1;
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    overflow: visible;
+    width: 38px;
+    white-space: nowrap;
+    text-align: left;
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 12px;
+    color: rgba(0,0,0,0.6);
+    letter-spacing: 0.17px;
+}
+.Image_A2_Path_7_Class {
+    opacity: 1;
+    fill: url(#Image_A2_Path_8_pattern);
+}
+.Image_A2_Path_7 {
+    transform: matrix(1,0,0,1,0,0);
+    overflow: visible;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 111.932px;
+    height: 110.694px;
+}
+.Cards___List_2_up___Filled___I_A2_Group_10_Class {
+    opacity: 1;
+    position: absolute;
+    width: 111.932px;
+    height: 148.6px;
+    left: 528.5px;
+    top: 3.5px;
+    overflow: visible;
+}
+.Surface_A2_Rectangle_9_Class {
+    opacity: 1;
+    filter: drop-shadow(0px 1px 3px rgba(0, 0, 0, 0.2));
+    fill: rgba(255,255,255,1);
+}
+.Surface_A2_Rectangle_9 {
+    position: absolute;
+    overflow: visible;
+    width: 120.932px;
+    height: 157.6px;
+    left: 0px;
+    top: 0px;
+}
+.Body_2_A2_Group_11_Class {
+    opacity: 1;
+    position: absolute;
+    width: 37px;
+    height: 14px;
+    left: 19px;
+    top: 122.6px;
+    overflow: visible;
+}
+.Body_2_A2_Text_6_Class {
+    opacity: 1;
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    overflow: visible;
+    width: 38px;
+    white-space: nowrap;
+    text-align: left;
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 12px;
+    color: rgba(0,0,0,0.6);
+    letter-spacing: 0.17px;
+}
+.Image_A2_Path_9_Class {
+    opacity: 1;
+    fill: url(#Image_A2_Path_10_pattern);
+}
+.Image_A2_Path_9 {
+    transform: matrix(1,0,0,1,0,0);
+    overflow: visible;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 111.932px;
+    height: 110.694px;
+}
+.Tab___Elements___Text_Tab___Ac_A2_Group_12_Class {
+    opacity: 1;
+    position: absolute;
+    width: 652.156px;
+    height: 224.6px;
+    left: 9.776px;
+    top: 486px;
+    overflow: visible;
+}
+.Box_A2_Rectangle_10_Class {
+    opacity: 1;
+    fill: transparent;
+}
+.Box_A2_Rectangle_10 {
+    position: absolute;
+    overflow: visible;
+    width: 68.631px;
+    height: 48px;
+    left: 6.224px;
+    top: 0px;
+}
+.Selected_A2_Rectangle_11_Class {
+    opacity: 1;
+    fill: rgba(98,0,238,1);
+}
+.Selected_A2_Rectangle_11 {
+    position: absolute;
+    overflow: visible;
+    width: 120px;
+    height: 2px;
+    left: 0px;
+    top: 46px;
+}
+.TAB_A2_Text_7_Class {
+    opacity: 1;
+    position: absolute;
+    left: 3.5px;
+    top: 15px;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    overflow: visible;
+    width: 121px;
     white-space: nowrap;
     text-align: left;
     font-family: Roboto;
     font-style: normal;
     font-weight: normal;
     font-size: 14px;
-    color: rgba(0,0,0,0.6);
+    color: rgba(98,0,238,1);
+    letter-spacing: 0.89px;
 }
-.Body_2_A0_Text_5_Class {
+.Cards___List_2_up___Filled___I_A2_RepeatGrid_2_Class {
     opacity: 1;
     position: absolute;
-    left: 71.977px;
-    top: 42px;
+    width: 651.932px;
+    height: 154.6px;
+    left: 0.224px;
+    top: 70px;
+    overflow: hidden;
+}
+.Cards___List_2_up___Filled___I_A2_Group_13_Class {
+    opacity: 1;
+    position: absolute;
+    width: 111.932px;
+    height: 148.6px;
+    left: 4.5px;
+    top: 3.5px;
+    overflow: visible;
+}
+.Surface_A2_Rectangle_12_Class {
+    opacity: 1;
+    filter: drop-shadow(0px 1px 3px rgba(0, 0, 0, 0.2));
+    fill: rgba(255,255,255,1);
+}
+.Surface_A2_Rectangle_12 {
+    position: absolute;
+    overflow: visible;
+    width: 120.932px;
+    height: 157.6px;
+    left: 0px;
+    top: 0px;
+}
+.Body_2_A2_Text_8_Class {
+    opacity: 1;
+    position: absolute;
+    left: 12px;
+    top: 130.6px;
     box-sizing: border-box;
     margin: 0;
     padding: 0;
     overflow: visible;
-    width: 198px;
+    width: 38px;
     white-space: nowrap;
     text-align: left;
     font-family: Roboto;
@@ -392,152 +517,51 @@ body {
     color: rgba(0,0,0,0.6);
     letter-spacing: 0.17px;
 }
-.ID1_A0_Text_6_Class {
+.Image_A2_Path_11_Class {
     opacity: 1;
-    position: absolute;
-    left: 36px;
-    top: 25px;
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-    overflow: visible;
-    width: 10px;
-    white-space: nowrap;
-    line-height: 18px;
-    margin-top: -1px;
-    text-align: left;
-    font-family: Roboto;
-    font-style: normal;
-    font-weight: normal;
-    font-size: 16px;
-    color: rgba(102,102,102,1);
+    fill: url(#Image_A2_Path_12_pattern);
 }
-.Navigation_Drawer___Elements___A0_Group_12_Class {
-    opacity: 1;
-    position: absolute;
-    width: 360px;
-    height: 72px;
-    left: 0px;
-    top: 184px;
-    overflow: visible;
-}
-.List___Two_Line___Image_11_A0_Group_13_Class {
-    opacity: 1;
-    position: absolute;
-    width: 100%;
-    height: 72px;
-    left: 50%;
-    transform: translateX(-50%);
-    top: 0px;
-    overflow: visible;
-}
-.Box_A0_Rectangle_13_Class {
-    opacity: 1;
-    fill: transparent;
-}
-.Box_A0_Rectangle_13 {
-    position: absolute;
-    overflow: visible;
-    width: 360px;
-    height: 72px;
-    left: 0px;
-    top: 0px;
-}
-.Divider_A0_Rectangle_14_Class {
-    opacity: 1;
-    fill: rgba(227,227,227,1);
-}
-.Divider_A0_Rectangle_14 {
-    position: absolute;
-    overflow: visible;
-    width: 272px;
-    height: 1px;
-    left: 88px;
-    top: 71px;
-}
-.Cards___Elements___Media___1_1_A0_Group_14_Class {
-    opacity: 1;
-    position: absolute;
-    width: 72px;
-    height: 72px;
-    left: 0px;
-    top: 0px;
-    overflow: visible;
-}
-.Box_A0_Rectangle_15_Class {
-    opacity: 1;
-    fill: transparent;
-}
-.Box_A0_Rectangle_15 {
-    position: absolute;
-    overflow: visible;
-    width: 72px;
-    height: 72px;
-    left: 0px;
-    top: 0px;
-}
-.Icon___Favorite___Filled_A0_Group_15_Class {
-    opacity: 0.5;
-    position: absolute;
-    width: 24px;
-    height: 24px;
-    left: 320px;
-    top: 24px;
-    overflow: visible;
-}
-.Box_A0_Rectangle_16_Class {
-    opacity: 1;
-    fill: transparent;
-}
-.Box_A0_Rectangle_16 {
-    position: absolute;
-    overflow: visible;
-    width: 24px;
-    height: 24px;
-    left: 0px;
-    top: 0px;
-}
-.Path_407_A0_Path_3_Class {
-    opacity: 1;
-    fill: rgba(0,0,0,1);
-}
-.Path_407_A0_Path_3 {
+.Image_A2_Path_11 {
     transform: matrix(1,0,0,1,0,0);
     overflow: visible;
     position: absolute;
-    top: 3px;
-    left: 2px;
-    width: 20px;
-    height: 18.35px;
+    top: 0px;
+    left: 0px;
+    width: 111.932px;
+    height: 124.6px;
 }
-.Subtitle_1_A0_Text_7_Class {
+.Cards___List_2_up___Filled___I_A2_Group_14_Class {
     opacity: 1;
     position: absolute;
-    left: 72px;
-    top: 19px;
+    width: 111.932px;
+    height: 148.6px;
+    left: 135.5px;
+    top: 3.5px;
+    overflow: visible;
+}
+.Surface_A2_Rectangle_13_Class {
+    opacity: 1;
+    filter: drop-shadow(0px 1px 3px rgba(0, 0, 0, 0.2));
+    fill: rgba(255,255,255,1);
+}
+.Surface_A2_Rectangle_13 {
+    position: absolute;
+    overflow: visible;
+    width: 120.932px;
+    height: 157.6px;
+    left: 0px;
+    top: 0px;
+}
+.Body_2_A2_Text_9_Class {
+    opacity: 1;
+    position: absolute;
+    left: 12px;
+    top: 130.6px;
     box-sizing: border-box;
     margin: 0;
     padding: 0;
     overflow: visible;
-    width: 170px;
-    white-space: nowrap;
-    text-align: left;
-    font-family: Roboto;
-    font-style: normal;
-    font-weight: normal;
-    font-size: 14px;
-    color: rgba(0,0,0,0.6);
-}
-.Body_2_A0_Text_8_Class {
-    opacity: 1;
-    position: absolute;
-    left: 71.977px;
-    top: 42px;
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-    overflow: visible;
-    width: 198px;
+    width: 38px;
     white-space: nowrap;
     text-align: left;
     font-family: Roboto;
@@ -547,152 +571,51 @@ body {
     color: rgba(0,0,0,0.6);
     letter-spacing: 0.17px;
 }
-.ID1_A0_Text_9_Class {
+.Image_A2_Path_13_Class {
     opacity: 1;
-    position: absolute;
-    left: 36px;
-    top: 25px;
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-    overflow: visible;
-    width: 10px;
-    white-space: nowrap;
-    line-height: 18px;
-    margin-top: -1px;
-    text-align: left;
-    font-family: Roboto;
-    font-style: normal;
-    font-weight: normal;
-    font-size: 16px;
-    color: rgba(102,102,102,1);
+    fill: url(#Image_A2_Path_14_pattern);
 }
-.Navigation_Drawer___Elements___A0_Group_16_Class {
-    opacity: 1;
-    position: absolute;
-    width: 360px;
-    height: 72px;
-    left: 0px;
-    top: 276px;
-    overflow: visible;
-}
-.List___Two_Line___Image_11_A0_Group_17_Class {
-    opacity: 1;
-    position: absolute;
-    width: 100%;
-    height: 72px;
-    left: 50%;
-    transform: translateX(-50%);
-    top: 0px;
-    overflow: visible;
-}
-.Box_A0_Rectangle_17_Class {
-    opacity: 1;
-    fill: transparent;
-}
-.Box_A0_Rectangle_17 {
-    position: absolute;
-    overflow: visible;
-    width: 360px;
-    height: 72px;
-    left: 0px;
-    top: 0px;
-}
-.Divider_A0_Rectangle_18_Class {
-    opacity: 1;
-    fill: rgba(227,227,227,1);
-}
-.Divider_A0_Rectangle_18 {
-    position: absolute;
-    overflow: visible;
-    width: 272px;
-    height: 1px;
-    left: 88px;
-    top: 71px;
-}
-.Cards___Elements___Media___1_1_A0_Group_18_Class {
-    opacity: 1;
-    position: absolute;
-    width: 72px;
-    height: 72px;
-    left: 0px;
-    top: 0px;
-    overflow: visible;
-}
-.Box_A0_Rectangle_19_Class {
-    opacity: 1;
-    fill: transparent;
-}
-.Box_A0_Rectangle_19 {
-    position: absolute;
-    overflow: visible;
-    width: 72px;
-    height: 72px;
-    left: 0px;
-    top: 0px;
-}
-.Icon___Favorite___Filled_A0_Group_19_Class {
-    opacity: 0.5;
-    position: absolute;
-    width: 24px;
-    height: 24px;
-    left: 320px;
-    top: 24px;
-    overflow: visible;
-}
-.Box_A0_Rectangle_20_Class {
-    opacity: 1;
-    fill: transparent;
-}
-.Box_A0_Rectangle_20 {
-    position: absolute;
-    overflow: visible;
-    width: 24px;
-    height: 24px;
-    left: 0px;
-    top: 0px;
-}
-.Path_407_A0_Path_4_Class {
-    opacity: 1;
-    fill: rgba(0,0,0,1);
-}
-.Path_407_A0_Path_4 {
+.Image_A2_Path_13 {
     transform: matrix(1,0,0,1,0,0);
     overflow: visible;
     position: absolute;
-    top: 3px;
-    left: 2px;
-    width: 20px;
-    height: 18.35px;
+    top: 0px;
+    left: 0px;
+    width: 111.932px;
+    height: 124.6px;
 }
-.Subtitle_1_A0_Text_10_Class {
+.Cards___List_2_up___Filled___I_A2_Group_15_Class {
     opacity: 1;
     position: absolute;
-    left: 72px;
-    top: 19px;
+    width: 111.932px;
+    height: 148.6px;
+    left: 266.5px;
+    top: 3.5px;
+    overflow: visible;
+}
+.Surface_A2_Rectangle_14_Class {
+    opacity: 1;
+    filter: drop-shadow(0px 1px 3px rgba(0, 0, 0, 0.2));
+    fill: rgba(255,255,255,1);
+}
+.Surface_A2_Rectangle_14 {
+    position: absolute;
+    overflow: visible;
+    width: 120.932px;
+    height: 157.6px;
+    left: 0px;
+    top: 0px;
+}
+.Body_2_A2_Text_10_Class {
+    opacity: 1;
+    position: absolute;
+    left: 12px;
+    top: 130.6px;
     box-sizing: border-box;
     margin: 0;
     padding: 0;
     overflow: visible;
-    width: 170px;
-    white-space: nowrap;
-    text-align: left;
-    font-family: Roboto;
-    font-style: normal;
-    font-weight: normal;
-    font-size: 14px;
-    color: rgba(0,0,0,0.6);
-}
-.Body_2_A0_Text_11_Class {
-    opacity: 1;
-    position: absolute;
-    left: 71.977px;
-    top: 42px;
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-    overflow: visible;
-    width: 198px;
+    width: 38px;
     white-space: nowrap;
     text-align: left;
     font-family: Roboto;
@@ -702,152 +625,51 @@ body {
     color: rgba(0,0,0,0.6);
     letter-spacing: 0.17px;
 }
-.ID1_A0_Text_12_Class {
+.Image_A2_Path_15_Class {
     opacity: 1;
-    position: absolute;
-    left: 36px;
-    top: 25px;
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-    overflow: visible;
-    width: 10px;
-    white-space: nowrap;
-    line-height: 18px;
-    margin-top: -1px;
-    text-align: left;
-    font-family: Roboto;
-    font-style: normal;
-    font-weight: normal;
-    font-size: 16px;
-    color: rgba(102,102,102,1);
+    fill: url(#Image_A2_Path_16_pattern);
 }
-.Navigation_Drawer___Elements___A0_Group_20_Class {
-    opacity: 1;
-    position: absolute;
-    width: 360px;
-    height: 72px;
-    left: 0px;
-    top: 368px;
-    overflow: visible;
-}
-.List___Two_Line___Image_11_A0_Group_21_Class {
-    opacity: 1;
-    position: absolute;
-    width: 100%;
-    height: 72px;
-    left: 50%;
-    transform: translateX(-50%);
-    top: 0px;
-    overflow: visible;
-}
-.Box_A0_Rectangle_21_Class {
-    opacity: 1;
-    fill: transparent;
-}
-.Box_A0_Rectangle_21 {
-    position: absolute;
-    overflow: visible;
-    width: 360px;
-    height: 72px;
-    left: 0px;
-    top: 0px;
-}
-.Divider_A0_Rectangle_22_Class {
-    opacity: 1;
-    fill: rgba(227,227,227,1);
-}
-.Divider_A0_Rectangle_22 {
-    position: absolute;
-    overflow: visible;
-    width: 272px;
-    height: 1px;
-    left: 88px;
-    top: 71px;
-}
-.Cards___Elements___Media___1_1_A0_Group_22_Class {
-    opacity: 1;
-    position: absolute;
-    width: 72px;
-    height: 72px;
-    left: 0px;
-    top: 0px;
-    overflow: visible;
-}
-.Box_A0_Rectangle_23_Class {
-    opacity: 1;
-    fill: transparent;
-}
-.Box_A0_Rectangle_23 {
-    position: absolute;
-    overflow: visible;
-    width: 72px;
-    height: 72px;
-    left: 0px;
-    top: 0px;
-}
-.Icon___Favorite___Filled_A0_Group_23_Class {
-    opacity: 0.5;
-    position: absolute;
-    width: 24px;
-    height: 24px;
-    left: 320px;
-    top: 24px;
-    overflow: visible;
-}
-.Box_A0_Rectangle_24_Class {
-    opacity: 1;
-    fill: transparent;
-}
-.Box_A0_Rectangle_24 {
-    position: absolute;
-    overflow: visible;
-    width: 24px;
-    height: 24px;
-    left: 0px;
-    top: 0px;
-}
-.Path_407_A0_Path_5_Class {
-    opacity: 1;
-    fill: rgba(0,0,0,1);
-}
-.Path_407_A0_Path_5 {
+.Image_A2_Path_15 {
     transform: matrix(1,0,0,1,0,0);
     overflow: visible;
     position: absolute;
-    top: 3px;
-    left: 2px;
-    width: 20px;
-    height: 18.35px;
+    top: 0px;
+    left: 0px;
+    width: 111.932px;
+    height: 124.6px;
 }
-.Subtitle_1_A0_Text_13_Class {
+.Cards___List_2_up___Filled___I_A2_Group_16_Class {
     opacity: 1;
     position: absolute;
-    left: 72px;
-    top: 19px;
+    width: 111.932px;
+    height: 148.6px;
+    left: 397.5px;
+    top: 3.5px;
+    overflow: visible;
+}
+.Surface_A2_Rectangle_15_Class {
+    opacity: 1;
+    filter: drop-shadow(0px 1px 3px rgba(0, 0, 0, 0.2));
+    fill: rgba(255,255,255,1);
+}
+.Surface_A2_Rectangle_15 {
+    position: absolute;
+    overflow: visible;
+    width: 120.932px;
+    height: 157.6px;
+    left: 0px;
+    top: 0px;
+}
+.Body_2_A2_Text_11_Class {
+    opacity: 1;
+    position: absolute;
+    left: 12px;
+    top: 130.6px;
     box-sizing: border-box;
     margin: 0;
     padding: 0;
     overflow: visible;
-    width: 170px;
-    white-space: nowrap;
-    text-align: left;
-    font-family: Roboto;
-    font-style: normal;
-    font-weight: normal;
-    font-size: 14px;
-    color: rgba(0,0,0,0.6);
-}
-.Body_2_A0_Text_14_Class {
-    opacity: 1;
-    position: absolute;
-    left: 71.977px;
-    top: 42px;
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-    overflow: visible;
-    width: 198px;
+    width: 38px;
     white-space: nowrap;
     text-align: left;
     font-family: Roboto;
@@ -857,119 +679,357 @@ body {
     color: rgba(0,0,0,0.6);
     letter-spacing: 0.17px;
 }
-.ID1_A0_Text_15_Class {
+.Image_A2_Path_17_Class {
+    opacity: 1;
+    fill: url(#Image_A2_Path_18_pattern);
+}
+.Image_A2_Path_17 {
+    transform: matrix(1,0,0,1,0,0);
+    overflow: visible;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 111.932px;
+    height: 124.6px;
+}
+.Cards___List_2_up___Filled___I_A2_Group_17_Class {
     opacity: 1;
     position: absolute;
-    left: 36px;
-    top: 25px;
+    width: 111.932px;
+    height: 148.6px;
+    left: 528.5px;
+    top: 3.5px;
+    overflow: visible;
+}
+.Surface_A2_Rectangle_16_Class {
+    opacity: 1;
+    filter: drop-shadow(0px 1px 3px rgba(0, 0, 0, 0.2));
+    fill: rgba(255,255,255,1);
+}
+.Surface_A2_Rectangle_16 {
+    position: absolute;
+    overflow: visible;
+    width: 120.932px;
+    height: 157.6px;
+    left: 0px;
+    top: 0px;
+}
+.Body_2_A2_Text_12_Class {
+    opacity: 1;
+    position: absolute;
+    left: 12px;
+    top: 130.6px;
     box-sizing: border-box;
     margin: 0;
     padding: 0;
     overflow: visible;
-    width: 10px;
+    width: 38px;
     white-space: nowrap;
-    line-height: 18px;
-    margin-top: -1px;
     text-align: left;
     font-family: Roboto;
     font-style: normal;
     font-weight: normal;
-    font-size: 16px;
-    color: rgba(102,102,102,1);
+    font-size: 12px;
+    color: rgba(0,0,0,0.6);
+    letter-spacing: 0.17px;
 }
-.Navigation_Drawer___Elements___A0_Group_24_Class {
+.Image_A2_Path_19_Class {
+    opacity: 1;
+    fill: url(#Image_A2_Path_20_pattern);
+}
+.Image_A2_Path_19 {
+    transform: matrix(1,0,0,1,0,0);
+    overflow: visible;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 111.932px;
+    height: 124.6px;
+}
+.Tab___Scrollable_Tabs___Text_L_Class {
     opacity: 1;
     position: absolute;
-    width: 100%;
-    height: 78px;
-    left: 50%;
-    transform: translateX(-50%);
+    width: 360px;
+    height: 69px;
+    left: 0px;
+    top: 572px;
+    overflow: visible;
+}
+.Surface_A2_Rectangle_17_Class {
+    opacity: 1;
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.2));
+    fill: rgba(98,0,238,1);
+}
+.Surface_A2_Rectangle_17 {
+    position: absolute;
+    overflow: visible;
+    width: 372px;
+    height: 81px;
+    left: 0px;
+    top: 0px;
+}
+.Group_6_Class {
+    opacity: 1;
+    position: absolute;
+    width: 280px;
+    height: 56px;
+    left: 43px;
+    top: 13px;
+    overflow: visible;
+}
+.Scrollable_Tabs_Class {
+    opacity: 1;
+    position: absolute;
+    width: 280px;
+    height: 56px;
+    left: 0px;
     top: 0px;
     overflow: visible;
 }
-.Box_A0_Rectangle_25_Class {
+.Tab___Elements___Text_Tab___Ac_A2_Group_21_Class {
+    opacity: 1;
+    position: absolute;
+    width: 120px;
+    height: 52px;
+    left: 160px;
+    top: 0px;
+    overflow: visible;
+}
+.Box_A2_Rectangle_18_Class {
+    opacity: 1;
+    fill: transparent;
+}
+.Box_A2_Rectangle_18 {
+    position: absolute;
+    overflow: visible;
+    width: 120px;
+    height: 48px;
+    left: 0px;
+    top: 0px;
+}
+.BUTTON_Class {
+    opacity: 1;
+    position: absolute;
+    left: 44px;
+    top: 38px;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    overflow: visible;
+    width: 17px;
+    white-space: nowrap;
+    text-align: left;
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 12px;
+    color: rgba(149,149,149,1);
+    letter-spacing: 0.89px;
+}
+.ic_apps_24px_Class {
+    opacity: 1;
+    fill: rgba(102,102,102,1);
+}
+.ic_apps_24px {
+    transform: matrix(1,0,0,1,0,0);
+    overflow: visible;
+    position: absolute;
+    top: 0px;
+    left: 40px;
+    width: 24px;
+    height: 24px;
+}
+.Tab___Elements___Text_Tab___Ac_A2_Group_22_Class {
+    opacity: 1;
+    position: absolute;
+    width: 137px;
+    height: 56px;
+    left: 0px;
+    top: 0px;
+    overflow: visible;
+}
+.Box_A2_Rectangle_19_Class {
+    opacity: 1;
+    fill: transparent;
+}
+.Box_A2_Rectangle_19 {
+    position: absolute;
+    overflow: visible;
+    width: 120px;
+    height: 48px;
+    left: 17px;
+    top: 8px;
+}
+.Selected_A2_Path_22_Class {
     opacity: 1;
     fill: rgba(255,255,255,1);
 }
-.Box_A0_Rectangle_25 {
-    position: absolute;
+.Selected_A2_Path_22 {
+    transform: matrix(1,0,0,1,0,0);
     overflow: visible;
-    width: 360px;
-    height: 77px;
+    position: absolute;
+    top: 54px;
     left: 0px;
-    top: 0px;
+    width: 120px;
+    height: 2px;
 }
-.Avatar_Class {
-    opacity: 1;
-    fill: url(#assets/Avatar_A0_Ellipse_2_pattern);
-}
-.Avatar {
-    position: absolute;
-    overflow: visible;
-    width: 48px;
-    height: 48px;
-    left: 16px;
-    top: 15px;
-}
-.Divider_A0_Rectangle_26_Class {
-    opacity: 0.1;
-    fill: rgba(0,0,0,1);
-}
-.Divider_A0_Rectangle_26 {
-    position: absolute;
-    overflow: visible;
-    width: 360px;
-    height: 1px;
-    left: 0px;
-    top: 77px;
-}
-.Headline_6_Class {
+.BUTTON_A2_Text_14_Class {
     opacity: 1;
     position: absolute;
-    left: 80px;
-    top: 18px;
+    left: 46.869px;
+    top: 38px;
     box-sizing: border-box;
     margin: 0;
     padding: 0;
     overflow: visible;
-    width: 192px;
-    white-space: nowrap;
-    line-height: 18px;
-    margin-top: -1px;
-    text-align: left;
-    font-family: Roboto;
-    font-style: normal;
-    font-weight: normal;
-    font-size: 16px;
-    color: rgba(102,102,102,1);
-}
-.Body_2_A0_Group_25_Class {
-    opacity: 1;
-    position: absolute;
-    width: 237px;
-    height: 14px;
-    left: 80px;
-    top: 44px;
-    overflow: visible;
-}
-.Body_2_A0_Text_17_Class {
-    opacity: 1;
-    position: absolute;
-    left: 0px;
-    top: 0px;
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-    overflow: visible;
-    width: 238px;
+    width: 36px;
     white-space: nowrap;
     text-align: left;
     font-family: Roboto;
     font-style: normal;
     font-weight: normal;
     font-size: 12px;
-    color: rgba(0,0,0,0.6);
-    letter-spacing: 0.17px;
+    color: rgba(255,255,255,1);
+    letter-spacing: 0.89px;
+}
+.ic_home_24px_Class {
+    opacity: 1;
+    fill: rgba(255,255,255,1);
+}
+.ic_home_24px {
+    transform: matrix(1,0,0,1,0,0);
+    overflow: visible;
+    position: absolute;
+    top: 0px;
+    left: 48px;
+    width: 24px;
+    height: 24px;
+}
+.App_Bar___Top_App_Bar___Regula_Class {
+    opacity: 1;
+    position: absolute;
+    width: 360px;
+    height: 62.719px;
+    left: 0px;
+    top: 24px;
+    overflow: visible;
+}
+.Surface_A2_Path_24_Class {
+    opacity: 1;
+    fill: rgba(98,0,238,1);
+}
+.Surface_A2_Path_24 {
+    transform: matrix(1,0,0,1,0,0);
+    overflow: visible;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 360px;
+    height: 56px;
+}
+.Icon___Menu___Filled_Class {
+    opacity: 1;
+    position: absolute;
+    width: 24px;
+    height: 24px;
+    left: 16px;
+    top: 16px;
+    overflow: visible;
+}
+.Box_A2_Rectangle_20_Class {
+    opacity: 1;
+    fill: transparent;
+}
+.Box_A2_Rectangle_20 {
+    position: absolute;
+    overflow: visible;
+    width: 24px;
+    height: 24px;
+    left: 0px;
+    top: 0px;
+}
+.Icon___Menu_Class {
+    opacity: 1;
+    fill: rgba(255,255,255,1);
+}
+.Icon___Menu {
+    transform: matrix(1,0,0,1,0,0);
+    overflow: visible;
+    position: absolute;
+    top: 6px;
+    left: 3px;
+    width: 18px;
+    height: 12px;
+}
+.Icon___Search___Filled_Class {
+    opacity: 1;
+    position: absolute;
+    width: 24px;
+    height: 24px;
+    left: 320px;
+    top: 16px;
+    overflow: visible;
+}
+.Box_A2_Rectangle_21_Class {
+    opacity: 1;
+    fill: transparent;
+}
+.Box_A2_Rectangle_21 {
+    position: absolute;
+    overflow: visible;
+    width: 24px;
+    height: 24px;
+    left: 0px;
+    top: 0px;
+}
+.Icon___Search_Class {
+    opacity: 1;
+    fill: rgba(255,255,255,1);
+}
+.Icon___Search {
+    transform: matrix(1,0,0,1,0,0);
+    overflow: visible;
+    position: absolute;
+    top: 3px;
+    left: 3px;
+    width: 17.49px;
+    height: 17.491px;
+}
+.Icon___Favorite___Filled_Class {
+    opacity: 1;
+    transform: rotate(1deg);
+    transform-origin: left;
+    position: absolute;
+    width: 56.413px;
+    height: 52.054px;
+    left: 63.408px;
+    top: 9.689px;
+    overflow: visible;
+}
+.Box_A2_Rectangle_22_Class {
+    opacity: 1;
+    fill: transparent;
+}
+.Box_A2_Rectangle_22 {
+    position: absolute;
+    overflow: visible;
+    width: 57.313px;
+    height: 53.03px;
+    left: 0px;
+    top: 0px;
+}
+.Icon___Favorite_Class {
+    opacity: 1;
+    fill: rgba(255,255,255,1);
+}
+.Icon___Favorite {
+    transform: matrix(1,0,0,1,0,0);
+    overflow: visible;
+    position: absolute;
+    top: 3.034px;
+    left: 2.046px;
+    width: 53.215px;
+    height: 47.312px;
 }
 .System_Bar___Primary_Class {
     opacity: 1;
@@ -982,7 +1042,7 @@ body {
 }
 .Rectangle_373_Class {
     opacity: 1;
-    fill: transparent;
+    fill: rgba(126,57,251,1);
 }
 .Rectangle_373 {
     position: absolute;
@@ -994,7 +1054,7 @@ body {
 }
 .Icons_Class {
     opacity: 1;
-    fill: rgba(126,126,126,1);
+    fill: rgba(227,184,255,1);
 }
 .Icons {
     transform: matrix(1,0,0,1,0,0);
@@ -1005,52 +1065,3 @@ body {
     width: 46px;
     height: 10px;
 }
-.ic_arrow_back_24px_Class {
-    opacity: 1;
-    fill: rgba(102,102,102,1);
-}
-.ic_arrow_back_24px {
-    transform: matrix(1,0,0,1,0,0);
-    overflow: visible;
-    position: absolute;
-    top: 39px;
-    left: 32px;
-    width: 16px;
-    height: 16px;
-}
-.Icon___Search___Filled_Class {
-    opacity: 1;
-    position: absolute;
-    width: 24px;
-    height: 24px;
-    left: 320px;
-    top: 40px;
-    overflow: visible;
-}
-.Box_A0_Rectangle_28_Class {
-    opacity: 1;
-    fill: transparent;
-}
-.Box_A0_Rectangle_28 {
-    position: absolute;
-    overflow: visible;
-    width: 24px;
-    height: 24px;
-    left: 0px;
-    top: 0px;
-}
-.Icon___Search_Class {
-    opacity: 1;
-    fill: rgba(102,102,102,1);
-}
-.Icon___Search {
-    transform: matrix(1,0,0,1,0,0);
-    overflow: visible;
-    position: absolute;
-    top: 3px;
-    left: 3px;
-    width: 17.49px;
-    height: 17.491px;
-}
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
