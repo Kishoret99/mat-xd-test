@@ -11,6 +11,8 @@ import {MatRippleModule} from '@angular/material/core';
 import { AngularFireModule } from '@angular/fire';
 import { AngularFirestoreModule } from '@angular/fire/firestore';
 import { environment } from '../environments/environment';
+import { IonicStorageModule, Storage } from '@ionic/storage';
+
 
 @NgModule({
   declarations: [
@@ -25,7 +27,8 @@ import { environment } from '../environments/environment';
     MatListModule,
     MatIconModule,
     MatButtonModule,
-    MatRippleModule
+    MatRippleModule,
+    IonicStorageModule.forRoot()
   ],
   providers: [],
   bootstrap: [AppComponent]

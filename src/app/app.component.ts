@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { AngularFirestore, AngularFirestoreDocument } from '@angular/fire/firestore'
-import { Observable } from '../../node_modules/rxjs';
+import { Observable } from 'rxjs';
+import { StoreService } from '../services/store'
 
 
 export interface Movie {
@@ -21,10 +22,12 @@ export class AppComponent {
   title = 'mat-xd-test';
   
   private movieDoc: AngularFirestoreDocument<Movie>;
+  private counter = 0;
 
 
   constructor(
-    private db: AngularFirestore
+    private db: AngularFirestore,
+    private store: StoreService
   ) {}
 
 
@@ -37,9 +40,20 @@ export class AppComponent {
     this.db.collection('banners').add({
       
     })
+    this.store.subscribe('cart').subscribe(cart => {
+      console.log('> cart', cart);
+      this.counter = cart;
+      console.log('> counter', this.counter);
+    })
   }
 
   updateSongs() {
 
+  }
+
+  updateCart() {
+    console.log('> came here', this.counter++)
+
+    this.store.publish('cart', this.counter++);
   }
 }
