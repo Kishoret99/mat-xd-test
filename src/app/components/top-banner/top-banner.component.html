@@ -1,0 +1,9 @@
+<div class="image-carousal">
+  <div *ngFor="let banner of banners | async" >
+      <a href="{{banner.movieLink}}" (click)="navigateTo(banner)">
+          <img src="{{banner.imageUrl}}" class="image" alt="{{banner.movieTitle}}">
+      </a>
+    </div>
+</div>
+
+

@@ -1,0 +1,10 @@
+.image-carousal {
+    display: flex;
+    flex-direction: row;
+}
+
+.image-carousal .image {
+    width: 358px;
+    height: 192px;
+    margin: 0 auto;
+}

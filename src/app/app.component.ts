@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { AngularFirestore, AngularFirestoreDocument } from '@angular/fire/firestore'
 import { Observable } from 'rxjs';
-import { StoreService } from '../services/store'
+import { StoreService } from './services/store'
 
 
 export interface Movie {
@@ -32,14 +32,6 @@ export class AppComponent {
 
 
   ngOnInit() {
-    const data = [
-      {
-
-      }
-    ];
-    this.db.collection('banners').add({
-      
-    })
     this.store.subscribe('cart').subscribe(cart => {
       console.log('> cart', cart);
       this.counter = cart;
