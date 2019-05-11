@@ -17,6 +17,7 @@ import { MovieDetailsComponent } from './pages/movie-details/movie-details.compo
 import { HomeComponent } from './pages/home/home.component';
 import { AllMoviesComponent } from './pages/all-movies/all-movies.component';
 import { FooterComponent } from './components/footer/footer.component';
+import { LyricDetailsComponent } from './pages/lyric-details/lyric-details.component';
 
 
 @NgModule({
@@ -26,7 +27,8 @@ import { FooterComponent } from './components/footer/footer.component';
     MovieDetailsComponent,
     HomeComponent,
     AllMoviesComponent,
-    FooterComponent
+    FooterComponent,
+    LyricDetailsComponent
   ],
   imports: [
     BrowserModule,
