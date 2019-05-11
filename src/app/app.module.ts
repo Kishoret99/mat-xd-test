@@ -15,6 +15,8 @@ import { IonicStorageModule, Storage } from '@ionic/storage';
 import { TopBannerComponent } from './components/top-banner/top-banner.component';
 import { MovieDetailsComponent } from './pages/movie-details/movie-details.component';
 import { HomeComponent } from './pages/home/home.component';
+import { AllMoviesComponent } from './pages/all-movies/all-movies.component';
+import { FooterComponent } from './components/footer/footer.component';
 
 
 @NgModule({
@@ -22,7 +24,9 @@ import { HomeComponent } from './pages/home/home.component';
     AppComponent,
     TopBannerComponent,
     MovieDetailsComponent,
-    HomeComponent
+    HomeComponent,
+    AllMoviesComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,
