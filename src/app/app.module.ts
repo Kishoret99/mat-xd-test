@@ -18,6 +18,7 @@ import { HomeComponent } from './pages/home/home.component';
 import { AllMoviesComponent } from './pages/all-movies/all-movies.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { LyricDetailsComponent } from './pages/lyric-details/lyric-details.component';
+import { CurrentPlayingComponent } from './components/current-playing/current-playing.component';
 
 
 @NgModule({
@@ -28,7 +29,8 @@ import { LyricDetailsComponent } from './pages/lyric-details/lyric-details.compo
     HomeComponent,
     AllMoviesComponent,
     FooterComponent,
-    LyricDetailsComponent
+    LyricDetailsComponent,
+    CurrentPlayingComponent
   ],
   imports: [
     BrowserModule,
