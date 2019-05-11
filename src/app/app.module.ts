@@ -12,13 +12,17 @@ import { AngularFireModule } from '@angular/fire';
 import { AngularFirestoreModule } from '@angular/fire/firestore';
 import { environment } from '../environments/environment';
 import { IonicStorageModule, Storage } from '@ionic/storage';
-import { TopBannerComponent } from './components/top-banner/top-banner.component'
+import { TopBannerComponent } from './components/top-banner/top-banner.component';
+import { MovieDetailsComponent } from './pages/movie-details/movie-details.component';
+import { HomeComponent } from './pages/home/home.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    TopBannerComponent
+    TopBannerComponent,
+    MovieDetailsComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,

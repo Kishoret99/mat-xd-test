@@ -127,5 +127,8 @@
     "use-pipe-transform-interface": true,
     "component-class-suffix": true,
     "directive-class-suffix": true
-  }
+  },
+  "plugins": [
+    {"name": "@angular/language-service"}
+  ]
 }
