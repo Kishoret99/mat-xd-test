@@ -7,3 +7,7 @@
     left: 300px;
     top: 10px;
 }
+
+.container {
+    overflow-x: scroll;
+}

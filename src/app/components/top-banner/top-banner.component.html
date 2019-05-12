@@ -1,5 +1,5 @@
-<div class="image-carousal">
-  <div *ngFor="let banner of banners | async" >
+<div class="image-list">
+  <div *ngFor="let banner of banners | async" matRipple class="imagecard">
       <a href="{{banner.movieLink}}" (click)="navigateTo(banner)">
           <img src="{{banner.imageUrl}}" class="image" alt="{{banner.movieTitle}}">
       </a>
