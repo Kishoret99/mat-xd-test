@@ -1,5 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { AngularFirestore, AngularFirestoreCollection, AngularFirestoreDocument} from '@angular/fire/firestore'
+import { AngularFirestore, AngularFirestoreCollection, AngularFirestoreDocument} from '@angular/fire/firestore';
+import { Timestamp } from '@firebase/firestore-types';
 import { Router, ActivatedRoute } from '@angular/router';
 import { Observable } from 'rxjs';
 
@@ -8,7 +9,7 @@ export interface Movie {
   directors: string,
   languageCode: string,
   musicDirector: string,
-  releaseDate: Date,
+  releaseDate: Timestamp,
   title: string,
   imageUrl: string,
   songs: AngularFirestoreCollection
@@ -32,8 +33,8 @@ export interface Song {
 export class MovieDetailsComponent implements OnInit {
 
   @Input() movieName;
-  public movie: Observable<Movie>;
-  public songs: Observable<Array<Song>>;
+  public movie: Movie;
+  public songs: Array<Song>;
   private movieDocument: AngularFirestoreDocument<Movie>;
   private moviesCollection: AngularFirestoreCollection<Movie>;
   private songsCollection: AngularFirestoreCollection<Song>;
@@ -48,18 +49,14 @@ export class MovieDetailsComponent implements OnInit {
     this.activateRoute.params.subscribe(param => {
       if(param.movieName) {
         this.movieDocument = this.afs.doc(`movies/${param.movieName}`);
-        this.movie = this.movieDocument.valueChanges();
-        this.songsCollection = this.movieDocument.collection('songs');
-        this.songs = this.songsCollection.valueChanges();
-
-        //DEBUG
-        this.movie.subscribe(movie => {
-          console.log('> movie', movie);
-        });
-
-        this.songs.subscribe(songs => {
-          console.log('> songs', songs);
+        this.movieDocument.valueChanges().subscribe(movie => {
+          this.movie = movie;
         })
+
+        this.songsCollection = this.movieDocument.collection('songs');
+        this.songsCollection.valueChanges().subscribe(songs => {
+          this.songs = songs;
+        });
       }
     })
   }

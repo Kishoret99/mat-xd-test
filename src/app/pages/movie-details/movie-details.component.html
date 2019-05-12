@@ -1,272 +1,35 @@
-<h2>movie details</h2>
-<div>
-	{{movie || json || async}}
-</div>
-
-
-<h3> songs</h3>
-<div>
-	{{songs || async}}
-</div>
-<!-- <div class="Songs_Class">
-<div id="Songs">
-	<div class="Navigation_Drawer___Bottom___R_Class">
-		<div class="Navigation_Drawer___Bottom___R_A1_Group_2_Class">
-			<svg class="Surface">
-				<rect class="Surface_Class" rx="0" ry="0" x="0" y="0" width="360" height="640">
-				</rect>
-			</svg>
-			<svg class="Surface_A1_Rectangle_2">
-				<rect class="Surface_A1_Rectangle_2_Class" rx="0" ry="0" x="0" y="0" width="360" height="536">
-				</rect>
-			</svg>
-			<svg class="Image">
-				<pattern elementId="Image_A1_Rectangle_4" id="Image_A1_Rectangle_4_pattern" x="0" y="0" width="100%" height="100%">
-					<image x="0" y="0" width="100%" height="100%" href="Image_A1_Rectangle_4_pattern.png" xlink:href="Image_A1_Rectangle_4_pattern.png"></image>
-				</pattern>
-				<rect class="Image_Class" rx="0" ry="0" x="0" y="0" width="360" height="320">
-				</rect>
-			</svg>
+<div class="container">
+	<ng-container class="details" *ngIf="movie">
+		<div class="imageholder">
+			<img class="image" src="{{movie.imageUrl}}" alt="{{movie.title}}">
 		</div>
-		<div class="Group_5_Class">
-			<div class="Navigation_Drawer___Elements___Class">
-				<div class="Navigation_Drawer___Elements___A1_Group_4_Class">
-					<div class="List___Two_Line___Image_11_Class">
-						<svg class="Box">
-							<rect class="Box_Class" rx="0" ry="0" x="0" y="0" width="360" height="72">
-							</rect>
-						</svg>
-						<svg class="Divider">
-							<rect class="Divider_Class" rx="0" ry="0" x="0" y="0" width="272" height="1">
-							</rect>
-						</svg>
-						<div class="Cards___Elements___Media___1_1_Class">
-							<svg class="Box_A1_Rectangle_7">
-								<rect class="Box_A1_Rectangle_7_Class" rx="0" ry="0" x="0" y="0" width="72" height="72">
-								</rect>
-							</svg>
-						</div>
-						<div class="Icon___Favorite___Filled_Class">
-							<svg class="Box_A1_Rectangle_8">
-								<rect class="Box_A1_Rectangle_8_Class" rx="0" ry="0" x="0" y="0" width="24" height="24">
-								</rect>
-							</svg>
-							<svg class="Path_407" viewBox="859 -1415 20 18.35">
-								<path class="Path_407_Class" d="M 869 -1396.650024414062 L 867.5499877929688 -1397.969970703125 C 862.3999633789062 -1402.640014648438 859 -1405.719970703125 859 -1409.5 C 858.9857177734375 -1410.963012695312 859.560546875 -1412.370361328125 860.5950927734375 -1413.404907226562 C 861.629638671875 -1414.439453125 863.0369262695312 -1415.014404296875 864.5 -1415.000122070312 C 866.2316284179688 -1414.986694335938 867.8726806640625 -1414.224487304688 868.9999389648438 -1412.910034179688 C 870.1272583007812 -1414.224609375 871.768310546875 -1414.986694335938 873.4999389648438 -1415 C 874.9630126953125 -1415.014404296875 876.3703002929688 -1414.439575195312 877.4048461914062 -1413.404907226562 C 878.439453125 -1412.370361328125 879.0142822265625 -1410.963012695312 878.9999389648438 -1409.5 C 879 -1405.719970703125 875.5999755859375 -1402.640014648438 870.4500122070312 -1397.9599609375 L 869 -1396.650024414062 Z">
-								</path>
-							</svg>
-						</div>
-						<div class="Subtitle_1_Class">
-							<span>Saahore Baahubali - Telugu</span>
-						</div>
-						<div class="Body_2_Class">
-							<span>Daler Mehnidi, M.M Keeravani | 3.22</span>
-						</div>
-						<div class="ID1_Class">
-							<span>1</span>
-						</div>
-					</div>
-				</div>
-				<div class="Navigation_Drawer___Elements___A1_Group_8_Class">
-					<div class="List___Two_Line___Image_11_A1_Group_9_Class">
-						<svg class="Box_A1_Rectangle_9">
-							<rect class="Box_A1_Rectangle_9_Class" rx="0" ry="0" x="0" y="0" width="360" height="72">
-							</rect>
-						</svg>
-						<svg class="Divider_A1_Rectangle_10">
-							<rect class="Divider_A1_Rectangle_10_Class" rx="0" ry="0" x="0" y="0" width="272" height="1">
-							</rect>
-						</svg>
-						<div class="Cards___Elements___Media___1_1_A1_Group_10_Class">
-							<svg class="Box_A1_Rectangle_11">
-								<rect class="Box_A1_Rectangle_11_Class" rx="0" ry="0" x="0" y="0" width="72" height="72">
-								</rect>
-							</svg>
-						</div>
-						<div class="Icon___Favorite___Filled_A1_Group_11_Class">
-							<svg class="Box_A1_Rectangle_12">
-								<rect class="Box_A1_Rectangle_12_Class" rx="0" ry="0" x="0" y="0" width="24" height="24">
-								</rect>
-							</svg>
-							<svg class="Path_407_A1_Path_2" viewBox="859 -1415 20 18.35">
-								<path class="Path_407_A1_Path_2_Class" d="M 869 -1396.650024414062 L 867.5499877929688 -1397.969970703125 C 862.3999633789062 -1402.640014648438 859 -1405.719970703125 859 -1409.5 C 858.9857177734375 -1410.963012695312 859.560546875 -1412.370361328125 860.5950927734375 -1413.404907226562 C 861.629638671875 -1414.439453125 863.0369262695312 -1415.014404296875 864.5 -1415.000122070312 C 866.2316284179688 -1414.986694335938 867.8726806640625 -1414.224487304688 868.9999389648438 -1412.910034179688 C 870.1272583007812 -1414.224609375 871.768310546875 -1414.986694335938 873.4999389648438 -1415 C 874.9630126953125 -1415.014404296875 876.3703002929688 -1414.439575195312 877.4048461914062 -1413.404907226562 C 878.439453125 -1412.370361328125 879.0142822265625 -1410.963012695312 878.9999389648438 -1409.5 C 879 -1405.719970703125 875.5999755859375 -1402.640014648438 870.4500122070312 -1397.9599609375 L 869 -1396.650024414062 Z">
-								</path>
-							</svg>
-						</div>
-						<div class="Subtitle_1_A1_Text_4_Class">
-							<span>Saahore Baahubali - Telugu</span>
-						</div>
-						<div class="Body_2_A1_Text_5_Class">
-							<span>Daler Mehnidi, M.M Keeravani | 3.22</span>
-						</div>
-						<div class="ID1_A1_Text_6_Class">
-							<span>1</span>
-						</div>
-					</div>
-				</div>
-				<div class="Navigation_Drawer___Elements___A1_Group_12_Class">
-					<div class="List___Two_Line___Image_11_A1_Group_13_Class">
-						<svg class="Box_A1_Rectangle_13">
-							<rect class="Box_A1_Rectangle_13_Class" rx="0" ry="0" x="0" y="0" width="360" height="72">
-							</rect>
-						</svg>
-						<svg class="Divider_A1_Rectangle_14">
-							<rect class="Divider_A1_Rectangle_14_Class" rx="0" ry="0" x="0" y="0" width="272" height="1">
-							</rect>
-						</svg>
-						<div class="Cards___Elements___Media___1_1_A1_Group_14_Class">
-							<svg class="Box_A1_Rectangle_15">
-								<rect class="Box_A1_Rectangle_15_Class" rx="0" ry="0" x="0" y="0" width="72" height="72">
-								</rect>
-							</svg>
-						</div>
-						<div class="Icon___Favorite___Filled_A1_Group_15_Class">
-							<svg class="Box_A1_Rectangle_16">
-								<rect class="Box_A1_Rectangle_16_Class" rx="0" ry="0" x="0" y="0" width="24" height="24">
-								</rect>
-							</svg>
-							<svg class="Path_407_A1_Path_3" viewBox="859 -1415 20 18.35">
-								<path class="Path_407_A1_Path_3_Class" d="M 869 -1396.650024414062 L 867.5499877929688 -1397.969970703125 C 862.3999633789062 -1402.640014648438 859 -1405.719970703125 859 -1409.5 C 858.9857177734375 -1410.963012695312 859.560546875 -1412.370361328125 860.5950927734375 -1413.404907226562 C 861.629638671875 -1414.439453125 863.0369262695312 -1415.014404296875 864.5 -1415.000122070312 C 866.2316284179688 -1414.986694335938 867.8726806640625 -1414.224487304688 868.9999389648438 -1412.910034179688 C 870.1272583007812 -1414.224609375 871.768310546875 -1414.986694335938 873.4999389648438 -1415 C 874.9630126953125 -1415.014404296875 876.3703002929688 -1414.439575195312 877.4048461914062 -1413.404907226562 C 878.439453125 -1412.370361328125 879.0142822265625 -1410.963012695312 878.9999389648438 -1409.5 C 879 -1405.719970703125 875.5999755859375 -1402.640014648438 870.4500122070312 -1397.9599609375 L 869 -1396.650024414062 Z">
-								</path>
-							</svg>
-						</div>
-						<div class="Subtitle_1_A1_Text_7_Class">
-							<span>Saahore Baahubali - Telugu</span>
-						</div>
-						<div class="Body_2_A1_Text_8_Class">
-							<span>Daler Mehnidi, M.M Keeravani | 3.22</span>
-						</div>
-						<div class="ID1_A1_Text_9_Class">
-							<span>1</span>
-						</div>
-					</div>
-				</div>
-				<div class="Navigation_Drawer___Elements___A1_Group_16_Class">
-					<div class="List___Two_Line___Image_11_A1_Group_17_Class">
-						<svg class="Box_A1_Rectangle_17">
-							<rect class="Box_A1_Rectangle_17_Class" rx="0" ry="0" x="0" y="0" width="360" height="72">
-							</rect>
-						</svg>
-						<svg class="Divider_A1_Rectangle_18">
-							<rect class="Divider_A1_Rectangle_18_Class" rx="0" ry="0" x="0" y="0" width="272" height="1">
-							</rect>
-						</svg>
-						<div class="Cards___Elements___Media___1_1_A1_Group_18_Class">
-							<svg class="Box_A1_Rectangle_19">
-								<rect class="Box_A1_Rectangle_19_Class" rx="0" ry="0" x="0" y="0" width="72" height="72">
-								</rect>
-							</svg>
-						</div>
-						<div class="Icon___Favorite___Filled_A1_Group_19_Class">
-							<svg class="Box_A1_Rectangle_20">
-								<rect class="Box_A1_Rectangle_20_Class" rx="0" ry="0" x="0" y="0" width="24" height="24">
-								</rect>
-							</svg>
-							<svg class="Path_407_A1_Path_4" viewBox="859 -1415 20 18.35">
-								<path class="Path_407_A1_Path_4_Class" d="M 869 -1396.650024414062 L 867.5499877929688 -1397.969970703125 C 862.3999633789062 -1402.640014648438 859 -1405.719970703125 859 -1409.5 C 858.9857177734375 -1410.963012695312 859.560546875 -1412.370361328125 860.5950927734375 -1413.404907226562 C 861.629638671875 -1414.439453125 863.0369262695312 -1415.014404296875 864.5 -1415.000122070312 C 866.2316284179688 -1414.986694335938 867.8726806640625 -1414.224487304688 868.9999389648438 -1412.910034179688 C 870.1272583007812 -1414.224609375 871.768310546875 -1414.986694335938 873.4999389648438 -1415 C 874.9630126953125 -1415.014404296875 876.3703002929688 -1414.439575195312 877.4048461914062 -1413.404907226562 C 878.439453125 -1412.370361328125 879.0142822265625 -1410.963012695312 878.9999389648438 -1409.5 C 879 -1405.719970703125 875.5999755859375 -1402.640014648438 870.4500122070312 -1397.9599609375 L 869 -1396.650024414062 Z">
-								</path>
-							</svg>
-						</div>
-						<div class="Subtitle_1_A1_Text_10_Class">
-							<span>Saahore Baahubali - Telugu</span>
-						</div>
-						<div class="Body_2_A1_Text_11_Class">
-							<span>Daler Mehnidi, M.M Keeravani | 3.22</span>
-						</div>
-						<div class="ID1_A1_Text_12_Class">
-							<span>1</span>
-						</div>
-					</div>
-				</div>
-				<div class="Navigation_Drawer___Elements___A1_Group_20_Class">
-					<div class="List___Two_Line___Image_11_A1_Group_21_Class">
-						<svg class="Box_A1_Rectangle_21">
-							<rect class="Box_A1_Rectangle_21_Class" rx="0" ry="0" x="0" y="0" width="360" height="72">
-							</rect>
-						</svg>
-						<svg class="Divider_A1_Rectangle_22">
-							<rect class="Divider_A1_Rectangle_22_Class" rx="0" ry="0" x="0" y="0" width="272" height="1">
-							</rect>
-						</svg>
-						<div class="Cards___Elements___Media___1_1_A1_Group_22_Class">
-							<svg class="Box_A1_Rectangle_23">
-								<rect class="Box_A1_Rectangle_23_Class" rx="0" ry="0" x="0" y="0" width="72" height="72">
-								</rect>
-							</svg>
-						</div>
-						<div class="Icon___Favorite___Filled_A1_Group_23_Class">
-							<svg class="Box_A1_Rectangle_24">
-								<rect class="Box_A1_Rectangle_24_Class" rx="0" ry="0" x="0" y="0" width="24" height="24">
-								</rect>
-							</svg>
-							<svg class="Path_407_A1_Path_5" viewBox="859 -1415 20 18.35">
-								<path class="Path_407_A1_Path_5_Class" d="M 869 -1396.650024414062 L 867.5499877929688 -1397.969970703125 C 862.3999633789062 -1402.640014648438 859 -1405.719970703125 859 -1409.5 C 858.9857177734375 -1410.963012695312 859.560546875 -1412.370361328125 860.5950927734375 -1413.404907226562 C 861.629638671875 -1414.439453125 863.0369262695312 -1415.014404296875 864.5 -1415.000122070312 C 866.2316284179688 -1414.986694335938 867.8726806640625 -1414.224487304688 868.9999389648438 -1412.910034179688 C 870.1272583007812 -1414.224609375 871.768310546875 -1414.986694335938 873.4999389648438 -1415 C 874.9630126953125 -1415.014404296875 876.3703002929688 -1414.439575195312 877.4048461914062 -1413.404907226562 C 878.439453125 -1412.370361328125 879.0142822265625 -1410.963012695312 878.9999389648438 -1409.5 C 879 -1405.719970703125 875.5999755859375 -1402.640014648438 870.4500122070312 -1397.9599609375 L 869 -1396.650024414062 Z">
-								</path>
-							</svg>
-						</div>
-						<div class="Subtitle_1_A1_Text_13_Class">
-							<span>Saahore Baahubali - Telugu</span>
-						</div>
-						<div class="Body_2_A1_Text_14_Class">
-							<span>Daler Mehnidi, M.M Keeravani | 3.22</span>
-						</div>
-						<div class="ID1_A1_Text_15_Class">
-							<span>1</span>
-						</div>
-					</div>
-				</div>
+		<div class="description bottom-full-border">
+			<div class="Avatar">
+		
 			</div>
-			<div class="Navigation_Drawer___Elements___A1_Group_24_Class">
-				<svg class="Box_A1_Rectangle_25">
-					<rect class="Box_A1_Rectangle_25_Class" rx="0" ry="0" x="0" y="0" width="360" height="77">
-					</rect>
-				</svg>
-				<svg class="Avatar">
-					<pattern elementId="Avatar_A1_Ellipse_2" id="Avatar_A1_Ellipse_2_pattern" x="0" y="0" width="100%" height="100%">
-						<image x="0" y="0" width="100%" height="100%" href="Avatar_A1_Ellipse_2_pattern.png" xlink:href="Avatar_A1_Ellipse_2_pattern.png"></image>
-					</pattern>
-					<ellipse class="Avatar_Class" rx="24" ry="24" cx="24" cy="24">
-					</ellipse>
-				</svg>
-				<svg class="Divider_A1_Rectangle_26">
-					<rect class="Divider_A1_Rectangle_26_Class" rx="0" ry="0" x="0" y="0" width="360" height="1">
-					</rect>
-				</svg>
-				<div class="Headline_6_Class">
-					<span>Baahubali - The conclusion</span>
-				</div>
-				<div class="Body_2_A1_Group_25_Class">
-					<div class="Body_2_A1_Text_17_Class">
-						<span>2018 - Prabhas, Anushka, Raana, Rajamouli</span>
-					</div>
-				</div>
+			<div class="subtitle">
+				<h1 class="Headline_6_Class">
+					<span>{{movie.title}}</span>
+				</h1>
+				<h2 class="Body_2_A1_Text_17_Class">
+					<span>{{movie.releaseDate.toDate().getFullYear()}} - {{movie.artists.join(', ')}}</span>
+				</h2>
 			</div>
 		</div>
-	</div>
-	<div class="System_Bar___Primary_Class">
-		<svg class="Rectangle_373">
-			<rect class="Rectangle_373_Class" rx="0" ry="0" x="0" y="0" width="360" height="24">
-			</rect>
-		</svg>
-		<svg class="Icons" viewBox="0 -10 46 10">
-			<path class="Icons_Class" d="M 23 -10 C 25.76142311096191 -10 28 -7.761423587799072 28 -5 C 28 -2.238576173782349 25.76142311096191 0 23 0 C 20.23857688903809 0 18 -2.23857593536377 18 -4.999999046325684 C 18 -7.76142406463623 20.23857688903809 -10 23 -10 Z M 40 0 L 34 -10 L 46 -10 L 40 0 Z M 0 -10 L 10 -10 L 10 0 L 0 0 L 0 -10 Z">
-			</path>
-		</svg>
-	</div>
-	<svg class="ic_arrow_back_24px" viewBox="4 4 16 16">
-		<path class="ic_arrow_back_24px_Class" d="M 20 11 L 7.829999923706055 11 L 13.42000007629395 5.409999847412109 L 12 4 L 4 12 L 12 20 L 13.40999984741211 18.59000015258789 L 7.829999923706055 13 L 20 13 L 20 11 Z">
-		</path>
-	</svg>
-	<div class="Icon___Search___Filled_Class">
-		<svg class="Box_A1_Rectangle_28">
-			<rect class="Box_A1_Rectangle_28_Class" rx="0" ry="0" x="0" y="0" width="24" height="24">
-			</rect>
-		</svg>
-		<svg class="Icon___Search" viewBox="403 -1415 17.49 17.491">
-			<path class="Icon___Search_Class" d="M 415.5 -1404 L 414.7059936523438 -1404 L 414.4299926757812 -1404.274047851562 C 415.443115234375 -1405.448852539062 416.0003051757812 -1406.948608398438 416 -1408.5 C 416 -1412.089965820312 413.0898742675781 -1415.000122070312 409.5000305175781 -1415.000122070312 C 405.9102172851562 -1415.000122070312 403.0000610351562 -1412.089965820312 403.0000610351562 -1408.500122070312 C 403.0000610351562 -1404.910278320312 405.9102478027344 -1402.000122070312 409.5001220703125 -1402.000122070312 C 411.0505676269531 -1401.9990234375 412.5498352050781 -1402.5546875 413.7250061035156 -1403.566040039062 L 414.0010070800781 -1403.2919921875 L 414.0010070800781 -1402.5 L 419.0010070800781 -1397.509033203125 L 420.489990234375 -1399 L 415.5019836425781 -1404 Z M 409.5 -1404 C 407.0147094726562 -1404 405 -1406.014770507812 405 -1408.5 C 405 -1410.985229492188 407.0147094726562 -1413 409.5 -1413 C 411.9852905273438 -1413 414 -1410.985229492188 414 -1408.5 C 414 -1406.014770507812 411.9852905273438 -1404 409.5 -1404 Z">
-			</path>
-		</svg>
-	</div>
-	<app-current-playing></app-current-playing>
+	</ng-container>
+	<ng-container *ngIf="songs">
+		<div class="description bottom-half-border" *ngFor="let song of songs; let i=index">
+			<div class="songindex">
+				{{i+1}}
+			</div>
+			<div class="songsubtitle">
+				<h1 class="Headline_6_Class">
+					<span>{{song.title}}</span>
+				</h1>
+				<h2 class="Body_2_A1_Text_17_Class">
+					<span>{{song.singers.join(', ')}} | {{song.duration}}</span>
+				</h2>
+			</div>
+		</div>
+	</ng-container>
 </div>
-</div> -->
