@@ -19,6 +19,8 @@ import { AllMoviesComponent } from './pages/all-movies/all-movies.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { LyricDetailsComponent } from './pages/lyric-details/lyric-details.component';
 import { CurrentPlayingComponent } from './components/current-playing/current-playing.component';
+import { NewReleasesComponent } from './components/new-releases/new-releases.component';
+import { RecentlyAddedComponent } from './components/recently-added/recently-added.component';
 
 
 @NgModule({
@@ -30,7 +32,9 @@ import { CurrentPlayingComponent } from './components/current-playing/current-pl
     AllMoviesComponent,
     FooterComponent,
     LyricDetailsComponent,
-    CurrentPlayingComponent
+    CurrentPlayingComponent,
+    NewReleasesComponent,
+    RecentlyAddedComponent
   ],
   imports: [
     BrowserModule,

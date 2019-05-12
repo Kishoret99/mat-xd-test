@@ -1,29 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { AngularFirestore, AngularFirestoreCollection, AngularFirestoreDocument} from '@angular/fire/firestore';
-import { Timestamp } from '@firebase/firestore-types';
 import { Router, ActivatedRoute } from '@angular/router';
-import { Observable } from 'rxjs';
-
-export interface Movie {
-  artists: Array<string>,
-  directors: string,
-  languageCode: string,
-  musicDirector: string,
-  releaseDate: Timestamp,
-  title: string,
-  imageUrl: string,
-  songs: AngularFirestoreCollection
-}
-
-export interface Song {
-  duration: string;
-  languageCode: string;
-  lyricist: string;
-  lyrics: string;
-  singers: Array<string>;
-  title: string;
-}
-
+import { Movie, Song } from '../../entities';
 
 @Component({
   selector: 'app-movie-details',
