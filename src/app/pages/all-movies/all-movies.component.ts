@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { AngularFirestore, AngularFirestoreCollection, AngularFirestoreDocument} from '@angular/fire/firestore';
+import { Movie } from '../../entities';
 
 @Component({
   selector: 'app-all-movies',
@@ -7,9 +9,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AllMoviesComponent implements OnInit {
 
-  constructor() { }
+  public movies: Array<Movie>
+  private moviesCollection: AngularFirestoreCollection<Movie>;
 
-  ngOnInit() {
+  constructor(
+    private afs: AngularFirestore
+  ) { 
+
   }
 
+  ngOnInit() {
+    this.moviesCollection = this.afs.collection('movies');
+    this.moviesCollection.valueChanges().subscribe(movies => {
+      this.movies = movies;
+    })
+  }
 }
