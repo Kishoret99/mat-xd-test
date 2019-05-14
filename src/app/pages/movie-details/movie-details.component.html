@@ -1,7 +1,7 @@
 <div class="container">
 	<ng-container class="details" *ngIf="movie">
 		<div class="imageholder">
-			<img class="image" src="{{movie.imageUrl}}" alt="{{movie.title}}">
+			<img class="image" src="{{movie?.imageUrl}}" alt="{{movie?.title}}">
 		</div>
 		<div class="description bottom-full-border">
 			<div class="Avatar">
@@ -9,10 +9,10 @@
 			</div>
 			<div class="subtitle">
 				<h1 class="Headline_6_Class">
-					<span>{{movie.title}}</span>
+					<span>{{movie?.title}}</span>
 				</h1>
 				<h2 class="Body_2_A1_Text_17_Class">
-					<span>{{movie.releaseDate.toDate().getFullYear()}} - {{movie.artists.join(', ')}}</span>
+					<span>{{movie?.releaseDate?.toDate()?.getFullYear()}} - {{movie?.artists?.join(', ')}}</span>
 				</h2>
 			</div>
 		</div>
@@ -24,10 +24,10 @@
 			</div>
 			<div class="songsubtitle">
 				<h1 class="Headline_6_Class">
-					<span>{{song.title}}</span>
+					<span>{{song?.title}}</span>
 				</h1>
 				<h2 class="Body_2_A1_Text_17_Class">
-					<span>{{song.singers.join(', ')}} | {{song.duration}}</span>
+					<span>{{song?.singers?.join(', ')}} | {{song?.duration}}</span>
 				</h2>
 			</div>
 		</div>

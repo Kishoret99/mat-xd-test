@@ -5,7 +5,7 @@ import { Movie } from '../../entities';
 @Component({
   selector: 'app-recently-added',
   templateUrl: './recently-added.component.html',
-  styleUrls: ['./recently-added.component.css']
+  styleUrls: ['./recently-added.component.scss']
 })
 export class RecentlyAddedComponent implements OnInit {
 

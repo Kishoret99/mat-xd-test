@@ -14,7 +14,7 @@ export interface BannerDoc {
 @Component({
   selector: 'app-top-banner',
   templateUrl: './top-banner.component.html',
-  styleUrls: ['./top-banner.component.css']
+  styleUrls: ['./top-banner.component.scss']
 })
 export class TopBannerComponent implements OnInit {
   public banners: Observable<BannerDoc[]>;

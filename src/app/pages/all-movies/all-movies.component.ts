@@ -11,7 +11,7 @@ export interface MovieWithId extends Movie {
 @Component({
   selector: 'app-all-movies',
   templateUrl: './all-movies.component.html',
-  styleUrls: ['./all-movies.component.css']
+  styleUrls: ['./all-movies.component.scss']
 })
 export class AllMoviesComponent implements OnInit {
 
