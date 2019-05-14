@@ -1,8 +1,8 @@
 <!-- {{movies | json}} -->
 
 <div class="image-list" >
-	<div class="image-card" *ngFor="let movie of movies">
-	  <a href="">
+	<div class="image-card" *ngFor="let movie of movies" (click)="naviagteTo(movie)">
+	  <a>
 		<img src="https://dummyimage.com/150x95/fab9fa/000ed4.jpg" alt="">
 	  </a>
 	  <h4>{{movie.title}}</h4>
