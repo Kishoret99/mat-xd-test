@@ -8,6 +8,7 @@ import {MatListModule} from '@angular/material/list';
 import {MatIconModule} from '@angular/material/icon';
 import {MatButtonModule} from '@angular/material/button';
 import {MatRippleModule} from '@angular/material/core';
+import {MatTabsModule} from '@angular/material/tabs';
 import { AngularFireModule } from '@angular/fire';
 import { AngularFirestoreModule } from '@angular/fire/firestore';
 import { environment } from '../environments/environment';
@@ -21,6 +22,7 @@ import { LyricDetailsComponent } from './pages/lyric-details/lyric-details.compo
 import { CurrentPlayingComponent } from './components/current-playing/current-playing.component';
 import { NewReleasesComponent } from './components/new-releases/new-releases.component';
 import { RecentlyAddedComponent } from './components/recently-added/recently-added.component';
+import { FooterNavigationComponent } from './components/footer-navigation/footer-navigation.component';
 
 
 @NgModule({
@@ -34,7 +36,8 @@ import { RecentlyAddedComponent } from './components/recently-added/recently-add
     LyricDetailsComponent,
     CurrentPlayingComponent,
     NewReleasesComponent,
-    RecentlyAddedComponent
+    RecentlyAddedComponent,
+    FooterNavigationComponent
   ],
   imports: [
     BrowserModule,
@@ -46,6 +49,7 @@ import { RecentlyAddedComponent } from './components/recently-added/recently-add
     MatIconModule,
     MatButtonModule,
     MatRippleModule,
+    MatTabsModule,
     IonicStorageModule.forRoot()
   ],
   providers: [],

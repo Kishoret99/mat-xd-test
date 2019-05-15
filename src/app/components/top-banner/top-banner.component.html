@@ -1,7 +1,7 @@
 <div class="image-list">
   <div *ngFor="let banner of banners | async" matRipple class="imagecard">
-      <a href="{{banner.movieLink}}" (click)="navigateTo(banner)">
-          <img src="{{banner.imageUrl}}" class="image" alt="{{banner.movieTitle}}">
+      <a routerLink="/{{banner.movieLink}}">
+          <img src="https://dummyimage.com/600x300/fab9fa/000ed4.jpg" class="image" alt="{{banner.title}}">
       </a>
     </div>
 </div>

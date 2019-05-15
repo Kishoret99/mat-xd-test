@@ -10,4 +10,7 @@
 
 .container {
     overflow-x: scroll;
+    .content {
+        padding-bottom: 60px;
+    }
 }
