@@ -8,7 +8,8 @@ import {MatListModule} from '@angular/material/list';
 import {MatIconModule} from '@angular/material/icon';
 import {MatButtonModule} from '@angular/material/button';
 import {MatRippleModule} from '@angular/material/core';
-import {MatTabsModule} from '@angular/material/tabs';
+import { MatTabsModule} from '@angular/material/tabs';
+import { MatToolbarModule } from '@angular/material/toolbar';
 import { AngularFireModule } from '@angular/fire';
 import { AngularFirestoreModule } from '@angular/fire/firestore';
 import { environment } from '../environments/environment';
@@ -17,12 +18,12 @@ import { TopBannerComponent } from './components/top-banner/top-banner.component
 import { MovieDetailsComponent } from './pages/movie-details/movie-details.component';
 import { HomeComponent } from './pages/home/home.component';
 import { AllMoviesComponent } from './pages/all-movies/all-movies.component';
-import { FooterComponent } from './components/footer/footer.component';
 import { LyricDetailsComponent } from './pages/lyric-details/lyric-details.component';
 import { CurrentPlayingComponent } from './components/current-playing/current-playing.component';
 import { NewReleasesComponent } from './components/new-releases/new-releases.component';
 import { RecentlyAddedComponent } from './components/recently-added/recently-added.component';
 import { FooterNavigationComponent } from './components/footer-navigation/footer-navigation.component';
+import { HeaderComponent } from './components/header/header.component';
 
 
 @NgModule({
@@ -32,12 +33,12 @@ import { FooterNavigationComponent } from './components/footer-navigation/footer
     MovieDetailsComponent,
     HomeComponent,
     AllMoviesComponent,
-    FooterComponent,
     LyricDetailsComponent,
     CurrentPlayingComponent,
     NewReleasesComponent,
     RecentlyAddedComponent,
-    FooterNavigationComponent
+    FooterNavigationComponent,
+    HeaderComponent
   ],
   imports: [
     BrowserModule,
@@ -50,6 +51,7 @@ import { FooterNavigationComponent } from './components/footer-navigation/footer
     MatButtonModule,
     MatRippleModule,
     MatTabsModule,
+    MatToolbarModule,
     IonicStorageModule.forRoot()
   ],
   providers: [],

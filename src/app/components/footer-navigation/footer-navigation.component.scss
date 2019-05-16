@@ -2,4 +2,8 @@
     position: fixed;
     bottom: 0;
     width: 100%;
+    mat-ink-bar.mat-ink-bar {
+        bottom: 45px !important;
+    }
 }
+
