@@ -10,7 +10,7 @@ import {MatButtonModule} from '@angular/material/button';
 import {MatRippleModule} from '@angular/material/core';
 import { MatTabsModule} from '@angular/material/tabs';
 import { MatToolbarModule } from '@angular/material/toolbar';
-import { AngularFireModule } from '@angular/fire';
+import { AngularFireModule, FirebaseOptionsToken } from '@angular/fire';
 import { AngularFirestoreModule } from '@angular/fire/firestore';
 import { environment } from '../environments/environment';
 import { IonicStorageModule, Storage } from '@ionic/storage';
@@ -54,7 +54,9 @@ import { HeaderComponent } from './components/header/header.component';
     MatToolbarModule,
     IonicStorageModule.forRoot()
   ],
-  providers: [],
+  providers: [
+    { provide: FirebaseOptionsToken, useValue: environment.firebase }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
