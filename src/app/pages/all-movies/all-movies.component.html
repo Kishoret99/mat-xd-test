@@ -1,11 +1,11 @@
-<!-- {{movies | json}} -->
-
-<div class="image-list" >
-	<div class="image-card" *ngFor="let movie of movies" (click)="naviagteTo(movie)">
-	  <a>
-		<img src="https://dummyimage.com/150x95/fab9fa/000ed4.jpg" alt="">
-	  </a>
-	  <h4>{{movie.title}}</h4>
+<div class="container">
+	<app-header></app-header>
+	<div class="content">
+			<div class="image-list" >
+					<a class="image-card" *ngFor="let movie of movies" routerLink="/movies/{{movie.id}}">
+						<img src="https://dummyimage.com/160x100/fab9fa/000ed4.jpg" alt="">
+						<h4>{{movie.title}}</h4>
+				</a>
 	</div>
+	<app-footer-navigation></app-footer-navigation>
 </div>
-<app-footer-navigation></app-footer-navigation>

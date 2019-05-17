@@ -6,7 +6,7 @@
 }
 
 .image-list .image-card {
-    margin-right: 20px;
+    margin-right: 10px;
     margin-bottom: 20px;
     text-decoration: none;
     flex-basis: 40%;
@@ -30,4 +30,12 @@
     font-weight: normal;
     font-size: 14px;
     color: #666666;
+}
+
+.container {
+    overflow-x: scroll;
+    .content {
+        padding-bottom: 60px;
+        padding-top: 20px;
+    }
 }
