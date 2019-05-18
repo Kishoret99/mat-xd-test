@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { AngularFirestore, AngularFirestoreDocument } from '@angular/fire/firestore'
 import { Observable } from 'rxjs';
-import { StoreService } from './services/store'
+// import { StoreService } from './services/store'
 
 
 export interface Movie {
@@ -27,16 +27,16 @@ export class AppComponent {
 
   constructor(
     private db: AngularFirestore,
-    private store: StoreService
+    // private store: StoreService
   ) {}
 
 
   ngOnInit() {
-    this.store.subscribe('cart').subscribe(cart => {
-      console.log('> cart', cart);
-      this.counter = cart;
-      console.log('> counter', this.counter);
-    })
+    // this.store.subscribe('cart').subscribe(cart => {
+    //   console.log('> cart', cart);
+    //   this.counter = cart;
+    //   console.log('> counter', this.counter);
+    // })
   }
 
   updateSongs() {
@@ -46,6 +46,6 @@ export class AppComponent {
   updateCart() {
     console.log('> came here', this.counter++)
 
-    this.store.publish('cart', this.counter++);
+    // this.store.publish('cart', this.counter++);
   }
 }
