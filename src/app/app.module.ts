@@ -10,6 +10,7 @@ import {MatButtonModule} from '@angular/material/button';
 import {MatRippleModule} from '@angular/material/core';
 import { MatTabsModule} from '@angular/material/tabs';
 import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatProgressBarModule } from '@angular/material/progress-bar';
 import { AngularFireModule, FirebaseOptionsToken } from '@angular/fire';
 import { AngularFirestoreModule } from '@angular/fire/firestore';
 import { environment } from '../environments/environment';
@@ -52,6 +53,7 @@ import { HeaderComponent } from './components/header/header.component';
     MatRippleModule,
     MatTabsModule,
     MatToolbarModule,
+    MatProgressBarModule,
     IonicStorageModule.forRoot()
   ],
   providers: [

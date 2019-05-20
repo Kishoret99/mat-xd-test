@@ -30,3 +30,7 @@ export class Movie implements IMovie {
         this.releaseDate 
     }
 }
+
+export interface MovieWithId extends Movie {
+    id: string;
+}

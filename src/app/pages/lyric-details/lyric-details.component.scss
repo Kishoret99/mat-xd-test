@@ -1,207 +1,39 @@
 
-#Lyrics * {
-    margin: 0;
-    padding: 0;
-}
-.Lyrics_Class {
-    position: absolute;
-    box-sizing: border-box;
-    background: #E5E5E5;
-    width: 100%;
-    height: 640px;
-    background-color: rgba(255,255,255,1);
-    overflow: hidden;
-    margin: 0;
-    padding: 0;
-    opacity: 1;
-    --web-view-name: Lyrics;
-    --web-view-id: Lyrics;
-    --web-enable-deep-linking: true;
-}
-.Shadow___24dp_Class {
-    opacity: 1;
-    position: absolute;
-    width: 286px;
-    height: 462.189px;
-    left: 37px;
-    top: 80px;
-    overflow: visible;
-}
-.Shadow___24dp_A3_Rectangle_1_Class {
-    opacity: 1;
-    filter: drop-shadow(0px 24px 38px rgba(0, 0, 0, 0.141));
-    fill: rgba(255,255,255,1);
-}
-.Shadow___24dp_A3_Rectangle_1 {
-    position: absolute;
-    overflow: visible;
-    width: 400px;
-    height: 576.189px;
-    left: 0px;
-    top: 0px;
-}
-.System_Bar___Primary_Class {
-    opacity: 1;
-    position: absolute;
-    width: 360px;
-    height: 24px;
-    left: 0px;
-    top: 0px;
-    overflow: visible;
-}
-.Rectangle_373_Class {
-    opacity: 1;
-    fill: transparent;
-}
-.Rectangle_373 {
-    position: absolute;
-    overflow: visible;
-    width: 360px;
-    height: 24px;
-    left: 0px;
-    top: 0px;
-}
-.Icons_Class {
-    opacity: 1;
-    fill: rgba(126,126,126,1);
-}
-.Icons {
-    transform: matrix(1,0,0,1,0,0);
-    overflow: visible;
-    position: absolute;
-    top: 7px;
-    left: 307px;
-    width: 46px;
-    height: 10px;
-}
-.ic_arrow_back_24px_Class {
-    opacity: 1;
-    fill: rgba(102,102,102,1);
-}
-.ic_arrow_back_24px {
-    transform: matrix(1,0,0,1,0,0);
-    overflow: visible;
-    position: absolute;
-    top: 38px;
-    left: 37px;
-    width: 16px;
-    height: 16px;
-}
-.____Text___H6___Selected___On__Class {
-    opacity: 1;
-    position: absolute;
-    width: 169px;
-    height: 30px;
-    left: 95.5px;
-    top: 31px;
-    overflow: visible;
-}
-.____Text___H6___Selected___On__A3_Text_1_Class {
-    opacity: 1;
-    position: absolute;
-    left: 0px;
-    top: 0px;
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-    overflow: visible;
-    width: 170px;
-    white-space: nowrap;
-    text-align: left;
-    font-family: Roboto;
-    font-style: normal;
-    font-weight: normal;
-    font-size: 14px;
-    color: rgba(102,102,102,1);
-}
-.FAB_Class {
-    opacity: 1;
-    position: absolute;
-    width: 56px;
-    height: 56px;
-    left: 144.5px;
-    top: 516.5px;
-    overflow: visible;
-}
-.Ellipse_10_Class {
-    opacity: 1;
-    filter: drop-shadow(0px 4px 5px rgba(0, 0, 0, 0.2));
-    fill: rgba(3,218,198,1);
-}
-.Ellipse_10 {
-    position: absolute;
-    overflow: visible;
-    width: 71px;
-    height: 71px;
-    left: 0px;
-    top: 0px;
-}
-.Icon___Favorite___Filled_Class {
-    opacity: 0.87;
-    position: absolute;
-    width: 24px;
-    height: 24px;
-    left: 16px;
-    top: 16px;
-    overflow: visible;
-}
-.Box_Class {
-    opacity: 1;
-    fill: transparent;
-}
-.Box {
-    position: absolute;
-    overflow: visible;
-    width: 24px;
-    height: 24px;
-    left: 0px;
-    top: 0px;
-}
-.Path_407_Class {
-    opacity: 1;
-    fill: rgba(0,0,0,1);
-}
-.Path_407 {
-    transform: matrix(1,0,0,1,0,0);
-    overflow: visible;
-    position: absolute;
-    top: 3px;
-    left: 2px;
-    width: 20px;
-    height: 18.35px;
-}
-.Progress_Indicators___Linear_Class {
-    opacity: 1;
-    position: absolute;
-    width: 260px;
-    height: 4px;
-    left: 50px;
-    top: 599px;
-    overflow: visible;
-}
-.Path_1110_Class {
-    opacity: 0.23;
-    fill: rgba(0,132,102,1);
-}
-.Path_1110 {
-    transform: matrix(1,0,0,1,0,0);
-    overflow: visible;
-    position: absolute;
-    top: 0px;
-    left: 0px;
-    width: 260px;
-    height: 4px;
-}
-.Path_1111_Class {
-    opacity: 1;
-    fill: rgba(0,132,102,1);
-}
-.Path_1111 {
-    transform: matrix(1,0,0,1,0,0);
-    overflow: visible;
-    position: absolute;
-    top: 0px;
-    left: 0px;
-    width: 160px;
-    height: 4px;
+
+.lyric-details {
+    .content {
+        margin: 40px 40px;
+        /* width: 286px; */
+        height: 343px;
+        border-radius: 40px;
+        overflow: scroll;
+        text-overflow: clip;
+        padding: 20px;
+        font-size: 22px;
+        text-align: center;
+    }
+    .favoriteicon {
+        display: block;
+        position: relative;
+        bottom: 70px;
+        margin: 0 auto;
+    }
+    .example-section {
+        margin: 0 40px;
+    }
+    .header {
+        display: flex;
+        margin: 40px 40px;
+        align-items: center;
+        .heading {
+            margin-left: 42px;
+            flex: 1 0 auto;
+            .main {
+                font-size: 16px;
+            }
+            .subtitle {
+                font-size: 14px;
+            }
+        }
+    }
 }

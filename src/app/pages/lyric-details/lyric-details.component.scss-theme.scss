@@ -1,0 +1,73 @@
+@import '~@angular/material/theming';
+
+@mixin lyric-details-component-theme($theme) {
+    $primary: map-get($theme, primary);
+    $accent: map-get($theme, accent);
+    $warn: map-get($theme, accent);
+    $foreground: map-get($theme, foreground);
+    $background: map-get($theme, background); 
+
+    .lyric-details {
+        .heading {
+            .main {
+                color: map-get($map: $foreground, $key: secondary-text)
+            }
+            .subtitle {
+                color: map-get($map: $foreground, $key: hint-text)
+            }
+        }
+        .content{
+            @include mat-elevation(8);
+            .lyric {
+                color: map-get($map: $foreground, $key: secondary-text)
+            }
+        }
+        .favoriteicon {
+            color: deeppink;
+        }
+
+    }
+    
+}
+
+
+
+.lyric-details {
+    .content {
+        margin: 40px 40px;
+        /* width: 286px; */
+        height: 343px;
+        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+        border-radius: 40px;
+        overflow: scroll;
+        text-overflow: clip;
+        padding: 20px;
+        font-size: 22px;
+        text-align: center;
+    }
+    .favoriteicon {
+        display: block;
+        position: relative;
+        bottom: 70px;
+        margin: 0 auto;
+        color: deeppink;
+    }
+    .example-section {
+        margin: 0 40px;
+    }
+    .header {
+        display: flex;
+        margin: 40px 40px;
+        align-items: center;
+        .heading {
+            margin-left: 42px;
+            flex: 1 0 auto;
+            .main {
+                font-size: 16px;
+            }
+            .subtitle {
+                font-size: 14px;
+            }
+        }
+    }
+}

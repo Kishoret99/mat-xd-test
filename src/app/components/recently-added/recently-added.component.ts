@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AngularFirestore, AngularFirestoreCollection, AngularFirestoreDocument} from '@angular/fire/firestore';
-import { Movie } from '../../entities';
+import { Movie, MovieWithId } from '../../entities';
+import { map } from 'rxjs/operators';
 
 @Component({
   selector: 'app-recently-added',
@@ -20,8 +21,13 @@ export class RecentlyAddedComponent implements OnInit {
     this.moviesCollection = this.afs.collection('movies', ref => {
       return ref.orderBy('createdAt', 'desc').limit(3);
     });
-    this.moviesCollection.valueChanges().subscribe(movies => {
-      console.log(movies);
+    this.moviesCollection.snapshotChanges().pipe(map(actions => {
+      return actions.map(action => {
+        const data = action.payload.doc.data() as Movie;
+        const id = action.payload.doc.id;
+        return {id, ...data}
+      })
+    })).subscribe(movies => {
       this.movies = movies;
     })
   }

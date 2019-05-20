@@ -1,4 +1,4 @@
-<div class="container">
+<div class="movie-details">
 	<ng-container class="details" *ngIf="movie">
 		<div class="imageholder">
 			<img class="image" src="{{movie?.imageUrl}}" alt="{{movie?.title}}">
@@ -18,7 +18,7 @@
 		</div>
 	</ng-container>
 	<ng-container *ngIf="songs">
-		<div class="description bottom-half-border" *ngFor="let song of songs; let i=index">
+		<a class="description bottom-half-border" *ngFor="let song of songs; let i=index" matRipple routerLink="/movies/{{routeParams.movieName}}/lyrics/{{song.id}}"> 
 			<div class="songindex">
 				{{i+1}}
 			</div>
@@ -30,6 +30,6 @@
 					<span>{{song?.singers?.join(', ')}} | {{song?.duration}}</span>
 				</h2>
 			</div>
-		</div>
+		</a>
 	</ng-container>
 </div>

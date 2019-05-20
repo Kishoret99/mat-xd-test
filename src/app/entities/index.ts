@@ -1,2 +1,2 @@
-export { Movie } from './movie';
-export { Song } from './song';
+export { Movie, MovieWithId } from './movie';
+export { Song, SongWithId } from './song';

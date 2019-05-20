@@ -1,12 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { AngularFirestore, AngularFirestoreCollection, AngularFirestoreDocument} from '@angular/fire/firestore';
-import { Movie } from '../../entities';
+import { Movie, MovieWithId } from '../../entities';
 import { map } from 'rxjs/operators';
 import { Router } from '@angular/router';
 
-export interface MovieWithId extends Movie {
-  id: string;
-}
 
 @Component({
   selector: 'app-all-movies',

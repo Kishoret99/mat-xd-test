@@ -1,19 +1,11 @@
-<div class="header">
-  <h3 class="title">Recently Added</h3>
-</div>
-<div class="image-list" >
-  <div class="image-card">
-    <a href="">
-      <img  src="https://dummyimage.com/160x100/fab9fa/000ed4.jpg" alt="">
-    </a>
-    <h4>Baahubali</h4>
+<div class="recentlyadded">
+  <div class="header">
+    <h3 class="title">Recently Added</h3>
   </div>
-  <a class="image-card" href="hello">
-    <img src="https://dummyimage.com/160x100/fab9fa/000ed4.jpg" alt="">
-    <h4>Baahubali</h4>
-  </a>
-  <a class="image-card" href="hello">
-    <img src="https://dummyimage.com/160x100/fab9fa/000ed4.jpg" alt="">
-    <h4>Baahubali</h4>
-  </a>
+  <div class="image-list" >
+    <a class="image-card" *ngFor="let movie of movies" routerLink="/movies/{{movie.id}}">
+      <img src="https://dummyimage.com/160x100/fab9fa/000ed4.jpg" alt="">
+      <h4>{{movie.title}}</h4>
+    </a>
+  </div>
 </div>

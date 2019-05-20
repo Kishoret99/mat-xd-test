@@ -1,0 +1,30 @@
+@import '~@angular/material/theming';
+
+@mixin new-releases-component-theme($theme) {
+    $primary: map-get($theme, primary);
+    $accent: map-get($theme, accent);
+    $warn: map-get($theme, accent);
+    $foreground: map-get($theme, foreground);
+    $background: map-get($theme, background);
+
+    .new-releases {
+        .header {
+            border-bottom: 2px solid map-get($foreground, text);
+        }
+        
+        .header .title {
+            color: map-get($foreground, text);
+        }
+        
+        .image-list .image-card img{
+            @include mat-elevation(2);
+        }
+        
+        .image-list .image-card h4{
+            color: map-get($foreground, text);
+        }
+    }
+}
+
+
+

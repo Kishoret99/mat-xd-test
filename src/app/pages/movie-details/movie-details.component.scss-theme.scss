@@ -1,3 +1,32 @@
+@import '~@angular/material/theming';
+
+@mixin movie-details-component-theme($theme) {
+    $primary: map-get($theme, primary);
+    $accent: map-get($theme, accent);
+    $warn: map-get($theme, accent);
+    $foreground: map-get($theme, foreground);
+    $background: map-get($theme, background); 
+
+    .movie-details {
+        .bottom-full-border {
+            border-bottom: 0.5px solid map-get($map: $foreground, $key: dividers)
+        }
+        .description .songsubtitle {
+            border-bottom: 0.5px solid map-get($map: $foreground, $key: divider)
+        }
+        .Headline_6_Class {
+            color: map-get($map: $foreground, $key: text)
+        }
+        .Body_2_A1_Text_17_Class {
+            color: map-get($map: $foreground, $key: secondary-text)
+        }
+        .description .songindex {
+            color: map-get($map: $foreground, $key: secondary-text)
+        }
+    }
+    
+}
+
 .movie-details {
     img.image {
         width: 100%;
@@ -11,14 +40,10 @@
         flex-direction: row;
     }
     
-    .Avatar {
-        flex-basis: 20%;
-        overflow: visible;
-        width: 48px;
-        height: 48px;
-        margin: 0 auto;
-        margin-top: 15px !important;
-    }    
+    .bottom-full-border {
+        border-bottom: 0.5px solid rgba(102, 102, 102, 0.75);
+    }
+    
     .description .subtitle {
         flex: 1 0 auto;
         overflow: hidden;
@@ -28,6 +53,7 @@
         flex: 1 0 auto;
         overflow: hidden;
         text-overflow: ellipsis;
+        border-bottom: 0.5px solid rgba(102, 102, 102, 0.25);
     }
     .description .songindex {
         line-height: 48px;
@@ -44,7 +70,6 @@
     }
     .Headline_6_Class {
         opacity: 1;
-        /* margin-left: 80px !important; */
         margin-top: 18px !important;
         box-sizing: border-box;
         margin: 0;
@@ -58,6 +83,7 @@
         font-style: normal;
         font-weight: normal;
         font-size: 16px;
+        color: rgba(102,102,102,1);
         overflow: hidden;
         text-overflow: ellipsis;
     }
@@ -75,6 +101,7 @@
         font-style: normal;
         font-weight: normal;
         font-size: 12px;
+        color: rgba(0,0,0,0.6);
         letter-spacing: 0.17px;
         overflow: hidden;
         text-overflow: ellipsis;
