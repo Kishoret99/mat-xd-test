@@ -2,6 +2,7 @@
 (global as any).XMLHttpRequest = require('xhr2');
 
 import 'zone.js/dist/zone-node';
+import 'reflect-metadata';
 import {enableProdMode} from '@angular/core';
 // Express Engine
 import {ngExpressEngine} from '@nguniversal/express-engine';
