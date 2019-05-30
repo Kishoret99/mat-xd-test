@@ -7,3 +7,4 @@ lyrics.split('\n').forEach(lyric => {
 });
 
 console.log(singleLineLyric);
+firebase.firestore().doc('movies/T9AFHmqcyQUN1XQLY4FR')

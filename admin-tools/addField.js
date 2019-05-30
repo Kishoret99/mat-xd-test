@@ -21,3 +21,7 @@ firebase.firestore().collection('movies').get().then(data => {
         })
     })
 })
+
+firebase.firestore().doc('movies/T9AFHmqcyQUN1XQLY4FR').onSnapshot(snapshot => {
+    console.log('>', new Date(snapshot.data().releaseDate.seconds));
+})

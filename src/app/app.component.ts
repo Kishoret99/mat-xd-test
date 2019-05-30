@@ -1,6 +1,7 @@
-import { Component } from '@angular/core';
+import { Component, PLATFORM_ID, Inject } from '@angular/core';
 import { AngularFirestore, AngularFirestoreDocument } from '@angular/fire/firestore'
 import { Observable } from 'rxjs';
+import { isPlatformBrowser } from '@angular/common';
 // import { StoreService } from './services/store'
 
 
@@ -27,6 +28,7 @@ export class AppComponent {
 
   constructor(
     private db: AngularFirestore,
+    @Inject(PLATFORM_ID) private platformId: Object,
     // private store: StoreService
   ) {}
 
@@ -37,6 +39,20 @@ export class AppComponent {
     //   this.counter = cart;
     //   console.log('> counter', this.counter);
     // })
+    
+    if (isPlatformBrowser(this.platformId)) {
+      this.db.firestore.enablePersistence().catch(function(err) {
+        if (err.code == 'failed-precondition') {
+            // Multiple tabs open, persistence can only be enabled
+            // in one tab at a a time.
+            // ...
+        } else if (err.code == 'unimplemented') {
+            // The current browser does not support all of the
+            // features required to enable persistence
+            // ...
+        }
+      });
+    }
   }
 
   updateSongs() {

@@ -25,6 +25,7 @@ import { NewReleasesComponent } from './components/new-releases/new-releases.com
 import { RecentlyAddedComponent } from './components/recently-added/recently-added.component';
 import { FooterNavigationComponent } from './components/footer-navigation/footer-navigation.component';
 import { HeaderComponent } from './components/header/header.component';
+import { ServiceWorkerModule } from '@angular/service-worker';
 
 
 @NgModule({
@@ -54,7 +55,8 @@ import { HeaderComponent } from './components/header/header.component';
     MatTabsModule,
     MatToolbarModule,
     MatProgressBarModule,
-    IonicStorageModule.forRoot()
+    IonicStorageModule.forRoot(),
+    ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production })
   ],
   providers: [
     { provide: FirebaseOptionsToken, useValue: environment.firebase }

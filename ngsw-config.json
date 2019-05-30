@@ -1,0 +1,42 @@
+{
+  "$schema": "./node_modules/@ngx-pwa/ngsw-schema/schema.json",
+  "index": "/index.html",
+  "assetGroups": [
+    {
+      "name": "app",
+      "installMode": "prefetch",
+      "resources": {
+        "files": [
+          "/favicon.ico",
+          "/index.html",
+          "/*.css",
+          "/*.js"
+        ]
+      }
+    }, {
+      "name": "assets",
+      "installMode": "lazy",
+      "updateMode": "prefetch",
+      "resources": {
+        "files": [
+          "/assets/**",
+          "/*.(eot|svg|cur|jpg|png|webp|gif|otf|ttf|woff|woff2|ani)"
+        ]
+      }
+    }, {
+      "name": "images",
+      "installMode": "lazy",
+      "updateMode": "prefetch",
+      "resources": {
+        "urls": [
+          "https://dummyimage.com/**",
+          "https://cors-anywhere.herokuapp.com/**",
+          "https://firebasestorage.googleapis.com/"
+        ]
+      }
+    }
+  ],
+  "navigationUrls": [
+    "/**"
+  ]
+}
