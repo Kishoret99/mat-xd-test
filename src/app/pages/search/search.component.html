@@ -1,0 +1,22 @@
+<div class="search-component">
+
+  <mat-toolbar color="primary" class="mat-elevation-z6 topbar">
+    <button mat-button class="backbutton" (click)="onBack()">
+        <mat-icon>arrow_back</mat-icon>
+    </button>
+    <div class="inputholder">
+      <input class="inputmain" type="text" placeholder="Search Lyrics">
+      <button mat-button class="closebutton">
+          <mat-icon>close</mat-icon>
+      </button>
+    </div>
+    <!-- </mat-toolbar-row> -->
+  </mat-toolbar>
+  <mat-list class="offset">
+      <mat-list-item *ngFor="let note of notes" matRipple (click)="onResultClick(note)"> 
+        <mat-icon mat-list-icon class="secondarycolor">history</mat-icon>
+        <div  mat-line class="searchresults">{{note.name}}</div>
+        <mat-icon class="rotate secondarycolor" (click)="onAutoFill(note);$event.stopPropagation()">call_made</mat-icon>
+      </mat-list-item>
+  </mat-list>
+</div>

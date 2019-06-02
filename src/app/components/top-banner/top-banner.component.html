@@ -1,7 +1,7 @@
 <div class="image-list">
   <div *ngFor="let banner of banners | async" matRipple class="imagecard">
       <a routerLink="/{{banner.movieLink}}">
-          <img src="https://cors-anywhere.herokuapp.com/https://dummyimage.com/640x400/fab9fa/000ed4.jpg" class="image" alt="{{banner.title}}">
+          <img src="https://dummyimage.com/640x400/fab9fa/000ed4.jpg" class="image" alt="{{banner.title}}">
       </a>
     </div>
 </div>

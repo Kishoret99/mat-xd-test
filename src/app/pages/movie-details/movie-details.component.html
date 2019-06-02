@@ -23,12 +23,10 @@
 				{{i+1}}
 			</div>
 			<div class="songsubtitle">
-				<h1 class="Headline_6_Class">
-					<span>{{song?.title}}</span>
-				</h1>
-				<h2 class="Body_2_A1_Text_17_Class">
-					<span>{{song?.singers?.join(', ')}} | {{song?.duration}}</span>
-				</h2>
+				<div class="Headline_6_Class">{{song?.title}}</div>
+				<div class="Body_2_A1_Text_17_Class">
+					<span class="singerarray">{{song?.singers?.join(', ')}}</span><span> | {{song?.duration}}</span>
+				</div>
 			</div>
 		</a>
 	</ng-container>

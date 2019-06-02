@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-
+import { FormsModule } from '@angular/forms'
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -11,6 +11,8 @@ import {MatRippleModule} from '@angular/material/core';
 import { MatTabsModule} from '@angular/material/tabs';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatProgressBarModule } from '@angular/material/progress-bar';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input'
 import { AngularFireModule, FirebaseOptionsToken } from '@angular/fire';
 import { AngularFirestoreModule } from '@angular/fire/firestore';
 import { environment } from '../environments/environment';
@@ -20,6 +22,7 @@ import { MovieDetailsComponent } from './pages/movie-details/movie-details.compo
 import { HomeComponent } from './pages/home/home.component';
 import { AllMoviesComponent } from './pages/all-movies/all-movies.component';
 import { LyricDetailsComponent } from './pages/lyric-details/lyric-details.component';
+import { SearchComponent }  from './pages/search/search.component';
 import { CurrentPlayingComponent } from './components/current-playing/current-playing.component';
 import { NewReleasesComponent } from './components/new-releases/new-releases.component';
 import { RecentlyAddedComponent } from './components/recently-added/recently-added.component';
@@ -36,6 +39,7 @@ import { ServiceWorkerModule } from '@angular/service-worker';
     HomeComponent,
     AllMoviesComponent,
     LyricDetailsComponent,
+    SearchComponent,
     CurrentPlayingComponent,
     NewReleasesComponent,
     RecentlyAddedComponent,
@@ -46,6 +50,7 @@ import { ServiceWorkerModule } from '@angular/service-worker';
     BrowserModule.withServerTransition({ appId: 'serverApp' }),
     AppRoutingModule,
     BrowserAnimationsModule,
+    FormsModule,
     AngularFireModule.initializeApp({...environment.firebase}),
     AngularFirestoreModule,
     MatListModule,
@@ -55,6 +60,8 @@ import { ServiceWorkerModule } from '@angular/service-worker';
     MatTabsModule,
     MatToolbarModule,
     MatProgressBarModule,
+    MatFormFieldModule,
+    MatInputModule,
     IonicStorageModule.forRoot(),
     ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production })
   ],

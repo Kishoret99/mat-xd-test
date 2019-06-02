@@ -1,9 +1,16 @@
-.container {
+.footer-navigation {
     position: fixed;
     bottom: 0;
     width: 100%;
     mat-ink-bar.mat-ink-bar {
         bottom: 45px !important;
     }
+    .mat-tab-links {
+        height: 60px !important;
+        a.mat-tab-link {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+    }
 }
-

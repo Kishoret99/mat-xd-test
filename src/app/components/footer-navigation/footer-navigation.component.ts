@@ -10,12 +10,14 @@ export class FooterNavigationComponent implements OnInit {
     {
       path: '/home',
       isActive: true,
-      label: 'home' 
+      label: 'home',
+      icon: 'home'
     },
     {
       path: '/movies',
       isActive: false,
-      label: 'all'
+      label: 'all',
+      icon: 'dashboard'
     },
   ]
   constructor() { }

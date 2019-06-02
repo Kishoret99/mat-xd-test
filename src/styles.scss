@@ -14,6 +14,7 @@
 @import './app/pages/all-movies/all-movies.component.scss-theme.scss';
 @import './app/pages/movie-details/movie-details.component.scss-theme.scss';
 @import './app/pages/lyric-details/lyric-details.component.scss-theme.scss';
+@import './app/pages/search/search.component.scss-theme.scss';
 
 @mixin custom-components-theme($theme) {
     @include recently-added-component-theme($theme);
@@ -21,6 +22,7 @@
     @include all-movies-component-theme($theme);   
     @include movie-details-component-theme($theme);
     @include lyric-details-component-theme($theme);
+    @include search-component-theme($theme);
 }
 
 .default-theme {
