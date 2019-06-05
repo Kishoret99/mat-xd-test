@@ -3,7 +3,7 @@
         margin-left: 14px;
         margin: 20px;
         padding-bottom: 15px;
-        width: 32%;
+        width: 121px;
     }
     
     .header .title {
@@ -12,7 +12,9 @@
         letter-spacing: 1px;
         margin: 0;
     }
-    
+    &.automargin {
+        margin: 0 auto;
+    }
     .image-list {
         margin-left: 15px;
         display: flex;
@@ -22,6 +24,7 @@
     .image-list .image-card {
         margin-right: 20px;
         text-decoration: none;
+        max-width: 160px;
     }
     
     .image-list .image-card img{
