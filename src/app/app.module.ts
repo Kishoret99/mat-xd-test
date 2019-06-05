@@ -65,7 +65,7 @@ import { FlexLayoutModule } from '@angular/flex-layout';
     MatProgressBarModule,
     MatFormFieldModule,
     MatInputModule,
-    FlexLayoutModule,
+    FlexLayoutModule.withConfig({ssrObserveBreakpoints: ['xs', 'gt-xs']}),
     IonicStorageModule.forRoot(),
     ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production })
   ],

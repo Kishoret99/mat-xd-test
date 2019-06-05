@@ -3,7 +3,7 @@ import { AngularFirestore, AngularFirestoreDocument } from '@angular/fire/firest
 import { Observable, from } from 'rxjs';
 import { map, mergeMap } from 'rxjs/operators';
 import { isPlatformBrowser } from '@angular/common';
-import { SwUpdate, ɵangular_packages_service_worker_service_worker_a } from '@angular/service-worker'
+import { SwUpdate } from '@angular/service-worker'
 // import { StoreService } from './services/store'
 
 
@@ -32,7 +32,6 @@ export class AppComponent {
     private db: AngularFirestore,
     @Inject(PLATFORM_ID) private platformId: Object,
     private swUpdate: SwUpdate,
-    private ngswCommChannel: ɵangular_packages_service_worker_service_worker_a
     // private store: StoreService
   ) {}
 
@@ -68,10 +67,6 @@ export class AppComponent {
     this.swUpdate.activated.subscribe( updateAvailableEvent=> {
       console.log('> Update activated events', updateAvailableEvent);
     });
-
-    this.ngswCommChannel.events.subscribe(event => {
-      console.log('> event', event);
-    })
   }
 
   updateSongs() {
