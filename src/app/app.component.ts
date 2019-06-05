@@ -1,7 +1,9 @@
 import { Component, PLATFORM_ID, Inject } from '@angular/core';
 import { AngularFirestore, AngularFirestoreDocument } from '@angular/fire/firestore'
-import { Observable } from 'rxjs';
+import { Observable, from } from 'rxjs';
+import { map, mergeMap } from 'rxjs/operators';
 import { isPlatformBrowser } from '@angular/common';
+import { SwUpdate, ɵangular_packages_service_worker_service_worker_a } from '@angular/service-worker'
 // import { StoreService } from './services/store'
 
 
@@ -29,6 +31,8 @@ export class AppComponent {
   constructor(
     private db: AngularFirestore,
     @Inject(PLATFORM_ID) private platformId: Object,
+    private swUpdate: SwUpdate,
+    private ngswCommChannel: ɵangular_packages_service_worker_service_worker_a
     // private store: StoreService
   ) {}
 
@@ -53,6 +57,21 @@ export class AppComponent {
         }
       });
     }
+
+    this.swUpdate.available.pipe(mergeMap(upateActivatedEvent => {
+      console.log('> update available events',upateActivatedEvent )
+      return from(this.swUpdate.activateUpdate())
+    })).subscribe(res => {
+      console.log('> this should be printed for this update', res)
+    })
+
+    this.swUpdate.activated.subscribe( updateAvailableEvent=> {
+      console.log('> Update activated events', updateAvailableEvent);
+    });
+
+    this.ngswCommChannel.events.subscribe(event => {
+      console.log('> event', event);
+    })
   }
 
   updateSongs() {
@@ -60,7 +79,7 @@ export class AppComponent {
   }
 
   updateCart() {
-    console.log('> came here', this.counter++)
+    console.log('> please', this.counter++)
 
     // this.store.publish('cart', this.counter++);
   }

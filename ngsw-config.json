@@ -23,17 +23,6 @@
           "/*.(eot|svg|cur|jpg|png|webp|gif|otf|ttf|woff|woff2|ani)"
         ]
       }
-    }, {
-      "name": "images",
-      "installMode": "lazy",
-      "updateMode": "prefetch",
-      "resources": {
-        "urls": [
-          "https://dummyimage.com/**",
-          "https://cors-anywhere.herokuapp.com/**",
-          "https://firebasestorage.googleapis.com/"
-        ]
-      }
     }
   ],
   "navigationUrls": [

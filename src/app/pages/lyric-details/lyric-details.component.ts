@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Location } from '@angular/common';
 import { AngularFirestore, AngularFirestoreCollection, AngularFirestoreDocument} from '@angular/fire/firestore';
 import { ActivatedRoute } from '@angular/router';
 import { Movie, Song } from '../../entities';
@@ -28,7 +29,8 @@ export class LyricDetailsComponent implements OnInit {
 
   constructor(
     private afs: AngularFirestore,
-    private activateRoute: ActivatedRoute
+    private activateRoute: ActivatedRoute,
+    private location: Location
   ) { }
 
   ngOnInit() {
@@ -42,5 +44,8 @@ export class LyricDetailsComponent implements OnInit {
         })
       }
     })
+  }
+  onBack() {
+    this.location.back();
   }
 }
