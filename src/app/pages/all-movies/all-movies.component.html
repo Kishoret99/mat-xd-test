@@ -1,5 +1,7 @@
 <div class="all-movies">
 	<app-header></app-header>
+	<app-desktop-header></app-desktop-header>
+	
 	<div class="content">
 			<div class="image-list" >
 					<a class="image-card" *ngFor="let movie of movies" routerLink="/movies/{{movie.id}}">

@@ -1,0 +1,22 @@
+.desktopheadercomponent {
+    .centeralign{
+        margin: 0 auto;
+    }
+    .logo {
+        font-size: 24px;
+    }
+    .links {
+        margin-left: 25px !important;
+        .link {
+            margin: 0 20px;
+        }
+    }
+    .searchbtn {
+        border: none;
+        height: 40px;
+        width: 250px;
+        border-radius: 20px;
+        box-sizing: border-box;
+        padding: 0 30px;
+    }
+}

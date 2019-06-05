@@ -1,0 +1,13 @@
+<div class="desktopheadercomponent" fxHide fxShow.gt-xs="true" >
+  <mat-toolbar color="primary" class="mat-elevation-z6" aria-hidden="false" aria-label="Example heart icon">
+    <mat-toolbar-row class="centeralign" [fxFlex]="'66'" fxLayout="row">
+          <span class="logo">Lyrk</span>
+          <div class="links" fxFlex="auto">
+            <a *ngFor="let link of navLinks" class="link" [routerLink]="link.path">{{link.label}}</a>
+          </div>
+          <div>
+            <input type="text" class="searchbtn" placeholder="search here">
+          </div>
+    </mat-toolbar-row>
+  </mat-toolbar>
+</div>

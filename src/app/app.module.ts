@@ -28,7 +28,9 @@ import { NewReleasesComponent } from './components/new-releases/new-releases.com
 import { RecentlyAddedComponent } from './components/recently-added/recently-added.component';
 import { FooterNavigationComponent } from './components/footer-navigation/footer-navigation.component';
 import { HeaderComponent } from './components/header/header.component';
+import { DesktopHeaderComponent } from './components/desktop-header/desktop-header.component';
 import { ServiceWorkerModule } from '@angular/service-worker';
+import { FlexLayoutModule } from '@angular/flex-layout';
 
 
 @NgModule({
@@ -44,7 +46,8 @@ import { ServiceWorkerModule } from '@angular/service-worker';
     NewReleasesComponent,
     RecentlyAddedComponent,
     FooterNavigationComponent,
-    HeaderComponent
+    HeaderComponent,
+    DesktopHeaderComponent
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'serverApp' }),
@@ -62,6 +65,7 @@ import { ServiceWorkerModule } from '@angular/service-worker';
     MatProgressBarModule,
     MatFormFieldModule,
     MatInputModule,
+    FlexLayoutModule,
     IonicStorageModule.forRoot(),
     ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production })
   ],
