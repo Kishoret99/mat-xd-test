@@ -26,5 +26,4 @@ export class DesktopHeaderComponent implements OnInit {
 
   ngOnInit() {
   }
-
 }

@@ -1,6 +1,17 @@
 .movie-details {
     img.image {
         width: 100%;
+        height: 100%;
+    }
+    .alignleft {
+        flex: 1;
+    }
+    .alignright {
+        flex: 1;
+        .scroll {
+            overflow: scroll;
+            height: 100%;
+        }
     }
     
     .description {
@@ -81,6 +92,15 @@
         .singerarray {
             width: 40%;
         }
+    }
+    .automargin {
+        margin: 0 auto;
+        margin: 0 auto;
+        margin-top: 60px;
+        height: 75vh !important;
+        width: 66%;
+        border-radius: 25px;
+        overflow: hidden;
     }
 }
 
