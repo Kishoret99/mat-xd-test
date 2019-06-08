@@ -1,0 +1,27 @@
+body, head {
+    width: 100%;
+    margin: 0px !important;
+    -webkit-box-sizing: border-box !important;
+	-moz-box-sizing: border-box !important;
+	-ms-box-sizing: border-box !important;
+    box-sizing: border-box !important;
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    color: #666666;
+}
+body {
+    a {
+        text-decoration: none;
+        color: inherit;
+    }
+}
+body.mat-typography h3, h1, h2 {
+    font-weight: normal;
+    margin: 0px;
+}
+
+.pointer {
+    cursor: pointer;
+}

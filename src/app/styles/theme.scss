@@ -1,0 +1,40 @@
+// Import library functions for theme creation.
+@import '~@angular/material/theming';
+
+// Include non-theme styles for core.
+@include mat-core();
+
+// themes
+@import './themes/default-theme.scss';
+@import './themes/dark-theme.scss';
+
+// custom components import
+@import '../components/recently-added/recently-added.component.scss-theme.scss';
+@import '../components/new-releases/new-releases.component.scss-theme.scss';
+@import '../pages/all-movies/all-movies.component.scss-theme.scss';
+@import '../pages/movie-details/movie-details.component.scss-theme.scss';
+@import '../pages/lyric-details/lyric-details.component.scss-theme.scss';
+@import '../pages/search/search.component.scss-theme.scss';
+
+@mixin custom-components-theme($theme) {
+    @include recently-added-component-theme($theme);
+    @include new-releases-component-theme($theme);
+    @include all-movies-component-theme($theme);   
+    @include movie-details-component-theme($theme);
+    @include lyric-details-component-theme($theme);
+    @include search-component-theme($theme);
+}
+
+.default-theme {
+    @include angular-material-theme($default-theme);
+    @include custom-components-theme($default-theme);
+    $background: map-get($default-theme, background);
+    background: map-get($background, background)
+}
+
+.dark-theme {
+    @include angular-material-theme($dark-theme);
+    @include custom-components-theme($dark-theme);
+    $background: map-get($dark-theme, background);
+    background: map-get($background, background)
+}
