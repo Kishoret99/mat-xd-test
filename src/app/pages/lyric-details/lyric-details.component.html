@@ -1,5 +1,5 @@
+<app-desktop-header  fxShow.gt-xs></app-desktop-header>
 <div class="lyric-details">
-		<app-desktop-header></app-desktop-header>
 	<div class="header">
         <mat-icon class="example-icon pointer" aria-hidden="false" aria-label="Example heart icon" (click)="onBack()">arrow_back_ios</mat-icon>		
 		<div class="heading">
@@ -7,21 +7,23 @@
 			<h2 class="subtitle">{{lyric?.movieTitle}}</h2>
 		</div>
 	</div>
-	<div class="content">
-		<p *ngFor="let line of lyricLines" class="lyric">
-			{{line}}
-		</p>
+	<div ngClass.gt-xs="desktop">
+		<div class="content">
+			<p *ngFor="let line of lyricLines" class="lyric">
+				{{line}}
+			</p>
+		</div>
+		<button mat-fab class="favoriteicon">
+			<mat-icon aria-label="Example icon-button with a heart icon">favorite</mat-icon>
+		</button>
+		<section class="example-section">
+			<mat-progress-bar
+				class="example-margin"
+				[color]="color"
+				[mode]="mode"
+				[value]="value"
+				[bufferValue]="bufferValue">
+			</mat-progress-bar>
+		</section>
 	</div>
-	<button mat-fab class="favoriteicon">
-		<mat-icon aria-label="Example icon-button with a heart icon">favorite</mat-icon>
-	</button>
-	<section class="example-section">
-		<mat-progress-bar
-			class="example-margin"
-			[color]="color"
-			[mode]="mode"
-			[value]="value"
-			[bufferValue]="bufferValue">
-		</mat-progress-bar>
-	  </section>
 </div>
