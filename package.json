@@ -1,6 +1,6 @@
 {
   "name": "mat-xd-test",
-  "version": "0.0.0",
+  "version": "0.2.0",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
@@ -14,7 +14,7 @@
     "serve:prerender": "cd dist/browser && http-server",
     "build:prerender": "npm run build:client-and-server-bundles && npm run compile:server && npm run generate:prerender",
     "generate:prerender": "cd dist && node prerender",
-    "build:client-and-server-bundles": "ng build --prod && ng run mat-xd-test:server:production"
+    "build:client-and-server-bundles": "ng build --prod --aot --buildOptimizer=true&& ng run mat-xd-test:server:production"
   },
   "private": true,
   "dependencies": {
@@ -72,6 +72,7 @@
     "tslint": "~5.11.0",
     "typescript": "~3.2.2",
     "utf-8-validate": "^5.0.2",
+    "webpack-bundle-analyzer": "^3.3.2",
     "webpack-cli": "^3.3.2",
     "ws": "^7.0.0",
     "xhr2": "^0.1.4",
