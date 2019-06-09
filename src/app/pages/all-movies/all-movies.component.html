@@ -2,8 +2,8 @@
 <app-desktop-header fxHide fxShow.gt-xs="true"></app-desktop-header>
 <div class="all-movies">	
 	<div class="content">
-			<div class="image-list" >
-					<a class="image-card" *ngFor="let movie of movies" routerLink="/movies/{{movie.id}}">
+			<div class="image-list" ngClass.gt-xs="desktopimagelist">
+					<a class="image-card" ngClass.gt-xs="image-card-dskt" *ngFor="let movie of movies" routerLink="/movies/{{movie.id}}">
 						<img src="https://dummyimage.com/160x100/000/fff.jpg" alt="">
 						<h4>{{movie.title}}</h4>
 				</a>
