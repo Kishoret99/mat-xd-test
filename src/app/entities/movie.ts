@@ -1,15 +1,15 @@
-import { Timestamp } from '@firebase/firestore-types';
+// import { any } from '@firebase/firestore/';
 import { AngularFirestoreCollection } from '@angular/fire/firestore';
 export interface IMovie {
     artists: Array<string>,
     directors: string,
     languageCode: string,
     musicDirector: string,
-    releaseDate: Timestamp,
+    releaseDate: any,
     title: string,
     imageUrl: string,
     songs: AngularFirestoreCollection,
-    createdAt: Timestamp
+    createdAt: any
 }
 
 export class Movie implements IMovie {
@@ -17,11 +17,11 @@ export class Movie implements IMovie {
     directors: string;
     languageCode: string;
     musicDirector: string;
-    releaseDate: Timestamp;
+    releaseDate: any;
     title: string;
     imageUrl: string;
     songs: AngularFirestoreCollection;
-    createdAt: Timestamp;
+    createdAt: any;
 
     constructor(movie) {
         this.artists = movie.artists || [],

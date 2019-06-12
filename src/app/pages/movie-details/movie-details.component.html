@@ -1,6 +1,6 @@
 <app-desktop-header fxHide fxShow.gt-xs="true"></app-desktop-header>
 <div class="movie-details">
-	<div  ngClass.gt-xs="automargin mat-elevation-z6" fxLayout.gt-xs="row">
+	<div  ngClass.gt-xs="automargin mat-elevation-z6" fxLayout.xs="column" fxLayout.gt-xs="row">
 		<div class="imageholder" ngClass.gt-xs="alignleft" *ngIf="movie">
 			<img class="image" src="{{movie?.imageUrl}}" alt="{{movie?.title}}">
 		</div>
