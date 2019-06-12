@@ -11,5 +11,5 @@ export const ROUTES = [
   '/movies/f5rHQPW7HHY9KmGhsFWW',
   '/movies/geetha-govindam-2018',
   '/movies/lOfiQUYxTFCtTgEewoJy',
-  '/movies/mahanati-2018'
+  '/movies/mahanati-2018',
 ];

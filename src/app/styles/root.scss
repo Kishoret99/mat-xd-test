@@ -25,3 +25,14 @@ body.mat-typography h3, h1, h2 {
 .pointer {
     cursor: pointer;
 }
+
+@media screen and (max-width: 599.99px) and (min-width: 0px) {
+    .xs-hide {
+        display: none;
+    }
+}
+@media screen and (min-width: 599.99px) {
+    .gt-xs-hide {
+        display: none;
+    }
+}

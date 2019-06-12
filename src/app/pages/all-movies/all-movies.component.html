@@ -1,12 +1,12 @@
-<app-header fxShow fxHide.gt-xs="false"></app-header>
-<app-desktop-header fxHide fxShow.gt-xs="true"></app-desktop-header>
+<app-header></app-header>
+<app-desktop-header></app-desktop-header>
 <div class="all-movies">	
 	<div class="content">
-			<div class="image-list" ngClass.gt-xs="desktopimagelist">
+			<div class="image-list" ngStyle.gt-xs="width:66%;margin:0 auto;">
 					<a class="image-card" ngClass.gt-xs="image-card-dskt" *ngFor="let movie of movies" routerLink="/movies/{{movie.id}}">
 						<img src="https://dummyimage.com/160x100/000/fff.jpg" alt="">
 						<h4>{{movie.title}}</h4>
 				</a>
 	</div>
-	<app-footer-navigation fxHide fxShow.xs></app-footer-navigation>
+	<app-footer-navigation class="gt-xs-hide"></app-footer-navigation>
 </div>

@@ -65,9 +65,9 @@ import { FlexLayoutModule } from '@angular/flex-layout';
     MatProgressBarModule,
     MatFormFieldModule,
     MatInputModule,
-    FlexLayoutModule.withConfig({ssrObserveBreakpoints: ['xs', 'gt-xs']}),
     IonicStorageModule.forRoot(),
-    ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production })
+    ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production }),
+    FlexLayoutModule.withConfig({ssrObserveBreakpoints: ['xs', 'gt-xs']}),
   ],
   providers: [
     { provide: FirebaseOptionsToken, useValue: environment.firebase }
