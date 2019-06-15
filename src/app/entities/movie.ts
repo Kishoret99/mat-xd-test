@@ -1,5 +1,6 @@
 // import { any } from '@firebase/firestore/';
 import { AngularFirestoreCollection } from '@angular/fire/firestore';
+import { Seo } from './index'
 export interface IMovie {
     artists: Array<string>,
     directors: string,
@@ -9,7 +10,8 @@ export interface IMovie {
     title: string,
     imageUrl: string,
     songs: AngularFirestoreCollection,
-    createdAt: any
+    createdAt: any,
+    seoInfo: Partial<Seo>
 }
 
 export class Movie implements IMovie {
@@ -22,12 +24,14 @@ export class Movie implements IMovie {
     imageUrl: string;
     songs: AngularFirestoreCollection;
     createdAt: any;
+    seoInfo: Partial<Seo>
 
     constructor(movie) {
         this.artists = movie.artists || [],
         this.directors = movie.directors || '';
         this.languageCode = movie.languageCode || '';
-        this.releaseDate 
+        this.releaseDate = movie.releaseDate || '';
+        this.seoInfo = movie.seoInfo || {};
     }
 }
 

@@ -3,6 +3,7 @@ import { AngularFirestore, AngularFirestoreCollection, AngularFirestoreDocument}
 import { Router, ActivatedRoute } from '@angular/router';
 import { Movie, Song, SongWithId } from '../../entities';
 import { map } from 'rxjs/operators';
+import { SeoService } from '../../services/seo'
 
 @Component({
   selector: 'app-movie-details',
@@ -22,7 +23,8 @@ export class MovieDetailsComponent implements OnInit {
   constructor(
     private afs: AngularFirestore,
     private router: Router,
-    private activateRoute: ActivatedRoute
+    private activateRoute: ActivatedRoute,
+    private seoSerive: SeoService
   ) { }
 
   ngOnInit() {
@@ -32,6 +34,7 @@ export class MovieDetailsComponent implements OnInit {
         this.movieDocument = this.afs.doc(`movies/${param.movieName}`);
         this.movieDocument.valueChanges().subscribe(movie => {
           this.movie = movie;
+          this.seoSerive.populate(movie.seoInfo);
         })
 
         this.songsCollection = this.movieDocument.collection('songs');
