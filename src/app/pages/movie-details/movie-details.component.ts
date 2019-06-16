@@ -33,6 +33,7 @@ export class MovieDetailsComponent implements OnInit {
       if(param.movieName) {
         this.movieDocument = this.afs.doc(`movies/${param.movieName}`);
         this.movieDocument.valueChanges().subscribe(movie => {
+          if(!movie) return;
           this.movie = movie;
           this.seoSerive.populate(movie.seoInfo);
         })

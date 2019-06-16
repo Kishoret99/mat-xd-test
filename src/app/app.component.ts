@@ -2,8 +2,9 @@ import { Component, PLATFORM_ID, Inject } from '@angular/core';
 import { AngularFirestore, AngularFirestoreDocument } from '@angular/fire/firestore'
 import { Observable, from } from 'rxjs';
 import { map, mergeMap } from 'rxjs/operators';
-import { isPlatformBrowser } from '@angular/common';
-import { SwUpdate } from '@angular/service-worker'
+import { isPlatformBrowser, DOCUMENT } from '@angular/common';
+import { SwUpdate } from '@angular/service-worker';
+import { environment } from '../environments/environment';
 // import { StoreService } from './services/store'
 
 
@@ -30,8 +31,9 @@ export class AppComponent {
 
   constructor(
     private db: AngularFirestore,
-    @Inject(PLATFORM_ID) private platformId: Object,
     private swUpdate: SwUpdate,
+    @Inject(PLATFORM_ID) private platformId: Object,
+    @Inject(DOCUMENT) private doc
     // private store: StoreService
   ) {}
 
@@ -55,6 +57,8 @@ export class AppComponent {
             // ...
         }
       });
+    } else {
+      this.gtmScript();
     }
 
     this.swUpdate.available.pipe(mergeMap(upateActivatedEvent => {
@@ -69,13 +73,22 @@ export class AppComponent {
     });
   }
 
-  updateSongs() {
-
-  }
-
-  updateCart() {
+  private updateCart() {
     console.log('> please', this.counter++)
 
     // this.store.publish('cart', this.counter++);
+  }
+
+  private gtmScript() {
+    const element = this.doc.createElement('script');
+    const innerHtml = 
+    `(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','${environment.gtmId}');`
+    element.innerHTML = innerHtml;
+    const head = this.doc.getElementsByTagName('head')[0]
+    head.appendChild(element);
   }
 }

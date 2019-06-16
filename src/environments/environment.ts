@@ -11,7 +11,8 @@ export const environment = {
     projectId: "lyrk-test",
     storageBucket: "lyrk-test.appspot.com",
     messagingSenderId: "233740825588"
-  }
+  },
+  gtmId: 'GTM-5TKBNM7'
 };
 
 /*

@@ -15,6 +15,7 @@ export class SeoService {
   }
 
   populate(partialSeo: Partial<Seo>) {
+    if(!partialSeo) return;
     this.setTitle(partialSeo.title);
     
     const seo: Seo = this.buildEntity(partialSeo);
