@@ -26,8 +26,9 @@ export class MetaDefinitions {
         const metaTags: Array<IMetaTag> = [];
         metaTags.push(new NameMetaTag(TAGS.DESCRIPTION, seoTags.description));
         metaTags.push(new NameMetaTag(TAGS.IMAGE, seoTags.image));
-        metaTags.push(new PropertyMetaTag(TAGS.OG_TITLE, seoTags.title));
-        metaTags.push(new PropertyMetaTag(TAGS.IMAGE, seoTags.image));
+        metaTags.push(new PropertyMetaTag(TAGS.OG_TITLE, seoTags["og:title"]));
+        metaTags.push(new PropertyMetaTag(TAGS.OG_DESCRIPTION, seoTags["og:description"]));
+        metaTags.push(new PropertyMetaTag(TAGS.IMAGE, seoTags["og:image"]));
 
         const validMetaDefs: MetaDefinition[] = [];
         metaTags.forEach((metaTag: IMetaTag) => {
