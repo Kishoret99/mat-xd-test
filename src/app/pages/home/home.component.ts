@@ -23,7 +23,7 @@ export class HomeComponent implements OnInit {
     this.content = this.doc.querySelector('.content');
   }
   ngAfterViewInit() {
-
+    if(isPlatformServer(this.platformId)) return;
     const self = this;
     let scrollPosition = window.pageYOffset;
     const offset = this.tabBar.offsetTop

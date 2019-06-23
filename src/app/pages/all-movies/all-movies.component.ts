@@ -51,7 +51,7 @@ export class AllMoviesComponent implements OnInit {
   }
 
   ngAfterViewInit() {
-
+    if(isPlatformServer(this.platformId)) return;
     const self = this;
     let scrollPosition = window.pageYOffset;
     const offset = this.tabBar.offsetTop
