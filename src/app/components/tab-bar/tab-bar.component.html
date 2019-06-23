@@ -1,0 +1,28 @@
+<div class="mdc-tab-bar mdc-tab-bar--scroll" role="tablist">
+  <div class="mdc-tab-scroller">
+    <div class="mdc-tab-scroller__scroll-area mdc-tab-scroller__scroll-area--scroll" style="margin-bottom: 0px;">
+      <div class="mdc-tab-scroller__scroll-content">
+        <a class="mdc-tab" role="tab" aria-selected="true" tabindex="0" id="mdc-tab-1" [routerLink]="'/home'" (click)="onTabClick(0)">
+          <span class="mdc-tab__content">
+            <span class="mdc-tab__icon material-icons" aria-hidden="true">home</span>
+            <span class="mdc-tab__text-label">Home</span>
+          </span>
+          <span class="mdc-tab-indicator">
+            <span class="mdc-tab-indicator__content mdc-tab-indicator__content--underline"></span>
+          </span>
+          <span class="mdc-tab__ripple mdc-ripple-upgraded"></span>
+        </a>
+        <a class="mdc-tab" role="tab" aria-selected="true" tabindex="1" id="mdc-tab-2" [routerLink]="'/movies'" (click)="onTabClick(1)">
+          <span class="mdc-tab__content">
+            <span class="mdc-tab__icon material-icons" aria-hidden="true">library_music</span>
+            <span class="mdc-tab__text-label">All</span>
+          </span>
+          <span class="mdc-tab-indicator">
+            <span class="mdc-tab-indicator__content mdc-tab-indicator__content--underline"></span>
+          </span>
+          <span class="mdc-tab__ripple mdc-ripple-upgraded"></span>
+        </a>
+      </div>
+    </div>
+  </div>
+</div>

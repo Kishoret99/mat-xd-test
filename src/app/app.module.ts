@@ -13,6 +13,8 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatProgressBarModule } from '@angular/material/progress-bar';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input'
+import { MatButtonToggleModule } from '@angular/material/button-toggle';
+import {OverlayModule} from '@angular/cdk/overlay';
 import { AngularFireModule, FirebaseOptionsToken } from '@angular/fire';
 import { AngularFirestoreModule } from '@angular/fire/firestore';
 import { environment } from '../environments/environment';
@@ -31,6 +33,8 @@ import { HeaderComponent } from './components/header/header.component';
 import { DesktopHeaderComponent } from './components/desktop-header/desktop-header.component';
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { FlexLayoutModule } from '@angular/flex-layout';
+import { TabBarComponent } from './components/tab-bar/tab-bar.component';
+import { ThemeSelectorDropdownComponent } from './components/theme-selector-dropdown/theme-selector-dropdown.component'
 
 
 @NgModule({
@@ -47,7 +51,9 @@ import { FlexLayoutModule } from '@angular/flex-layout';
     RecentlyAddedComponent,
     FooterNavigationComponent,
     HeaderComponent,
-    DesktopHeaderComponent
+    DesktopHeaderComponent,
+    TabBarComponent,
+    ThemeSelectorDropdownComponent
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'serverApp' }),
@@ -65,6 +71,8 @@ import { FlexLayoutModule } from '@angular/flex-layout';
     MatProgressBarModule,
     MatFormFieldModule,
     MatInputModule,
+    MatButtonToggleModule,
+    OverlayModule,
     IonicStorageModule.forRoot(),
     ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production }),
     FlexLayoutModule.withConfig({ssrObserveBreakpoints: ['xs', 'gt-xs']}),

@@ -1,12 +1,11 @@
 <app-header></app-header>
-<app-desktop-header></app-desktop-header>
+<app-tab-bar></app-tab-bar>
 <div class="all-movies">	
 	<div class="content">
-			<div class="image-list" ngStyle.gt-xs="width:66%;margin:0 auto;">
-					<a class="image-card" ngClass.gt-xs="image-card-dskt" *ngFor="let movie of movies" routerLink="/movies/{{movie.id}}">
-						<img src="https://dummyimage.com/160x100/000/fff.jpg" alt="">
-						<h4>{{movie.title}}</h4>
-				</a>
+		<div class="image-list" ngStyle.gt-xs="width:66%;margin:0 auto;">
+			<a class="image-card" ngClass.gt-xs="image-card-dskt" *ngFor="let movie of movies" routerLink="/movies/{{movie.id}}">
+				<img src="https://dummyimage.com/160x100/000/fff.jpg" alt="">
+				<h4>{{movie.title}}</h4>
+		</a>
 	</div>
-	<app-footer-navigation class="gt-xs-hide"></app-footer-navigation>
 </div>

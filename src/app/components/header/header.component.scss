@@ -1,3 +1,9 @@
-.example-spacer {
-    flex: 1 1 auto;
+@import "@material/top-app-bar/mdc-top-app-bar";
+.mdc-top-app-bar.mdc-top-app-bar--scroll {
+    z-index: auto;
+    position: initial;
+}
+
+.mdc-top-app-bar.mdc-top-app-bar--hide {
+    display: none;
 }

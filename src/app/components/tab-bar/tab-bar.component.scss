@@ -1,0 +1,44 @@
+@import "@material/tab-bar/mdc-tab-bar";
+@import "@material/tab-scroller/mdc-tab-scroller";
+@import "@material/tab-indicator/mdc-tab-indicator";
+@import "@material/tab/mdc-tab";
+@import '../../styles/themes/mdc-purple-theme.scss';
+
+@mixin mdc-tab-fill-color($color) {
+  @include mdc-theme-prop(background-color, $color);
+}
+
+@mixin mdc-tab-bar-fill-color-accessible($color) {
+    @include mdc-tab-fill-color($color);
+    @include mdc-tab-ink-color(mdc-theme-accessible-ink-color($color));
+    @include mdc-tab-indicator-underline-color(mdc-theme-accessible-ink-color($color))
+}
+
+
+
+.mdc-tab {
+    @include mdc-tab-bar-fill-color-accessible($mdc-theme-primary);
+}
+
+.mdc-tab--active .mdc-tab__text-label, .mdc-tab--active .mdc-tab__icon {
+    transition-delay: 100ms;
+    opacity: 1;
+}
+
+.mdc-tab__text-label, .mdc-tab__icon{
+    display: inline-block;
+    opacity: 0.6;
+    line-height: 1;
+    transition: 150ms color linear, 150ms opacity linear;
+    z-index: 2;
+}
+
+.mdc-tab-bar.mdc-tab-bar--fixed {
+    position: fixed;
+    z-index: 4;
+    top:0;
+}
+
+.mdc-tab-bar.mdc-tab-bar--scroll {
+    z-index: auto;
+}

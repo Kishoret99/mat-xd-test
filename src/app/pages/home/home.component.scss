@@ -11,6 +11,9 @@
 .container {
     overflow-x: scroll;
     .content {
-        padding-bottom: 60px;
+        // margin-top: 104px;
+    }
+    .content.content--fixed {
+        margin-top: 48px;
     }
 }

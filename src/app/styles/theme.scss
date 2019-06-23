@@ -7,6 +7,9 @@
 // themes
 @import './themes/default-theme.scss';
 @import './themes/dark-theme.scss';
+@import './themes/mdc-purple-theme.scss';
+@import "@material/theme/mdc-theme";
+@import "@material/theme/mixins";
 
 // custom components import
 @import '../components/recently-added/recently-added.component.scss-theme.scss';
