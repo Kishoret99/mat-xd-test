@@ -7,13 +7,9 @@
     left: 300px;
     top: 10px;
 }
-
-.container {
-    overflow-x: scroll;
-    .content {
-        // margin-top: 104px;
-    }
-    .content.content--fixed {
-        margin-top: 48px;
-    }
+.content {
+    // margin-top: 104px;
+}
+.content.content--fixed {
+    margin-top: 48px;
 }

@@ -1,4 +1,5 @@
 import { Component, PLATFORM_ID, Inject } from '@angular/core';
+import { isPlatformServer } from '@angular/common';
 import { AngularFirestore, AngularFirestoreDocument } from '@angular/fire/firestore'
 import { Observable, from } from 'rxjs';
 import { map, mergeMap } from 'rxjs/operators';
@@ -19,14 +20,11 @@ export interface Movie {
 })
 export class AppComponent {
 
-  movie: Observable<Movie>;
-  movies;
-  songs;
-  s = new Array(4)
   title = 'mat-xd-test';
-  
-  private movieDoc: AngularFirestoreDocument<Movie>;
-  private counter = 0;
+  private appTabBar: HTMLElement;
+  private counter: number = 0;
+  private content: HTMLElement;
+  private tabBar: HTMLElement;
 
 
   constructor(
@@ -71,6 +69,36 @@ export class AppComponent {
     this.swUpdate.activated.subscribe( updateAvailableEvent=> {
       console.log('> Update activated events', updateAvailableEvent);
     });
+  }
+
+  ngAfterViewInit() {
+    if(isPlatformServer(this.platformId)) return;
+    this.appTabBar = this.doc.querySelector('.mdc-top-app-bar');
+    this.tabBar = this.doc.querySelector('.mdc-tab-bar');
+    // this.content = this.doc.querySelector('.content');
+    const self = this;
+    let scrollPosition = window.pageYOffset;
+    const offset = this.tabBar.offsetTop
+    window.addEventListener('scroll', () => {
+      self.content = self.doc.querySelector('.content');
+      if(window.pageYOffset > offset) {
+        // self.appTabBar.classList.remove('mdc-top-app-bar--scroll');
+        // self.appTabBar.classList.add('mdc-top-app-bar--hide');
+
+        self.tabBar.classList.remove('mdc-tab-bar--scroll');
+        self.tabBar.classList.add('mdc-tab-bar--fixed');
+
+        self.content.classList.add('content--fixed');
+      } else {
+        // self.appTabBar.classList.add('mdc-top-app-bar--scroll');
+        // self.appTabBar.classList.remove('mdc-top-app-bar--hide');
+
+        self.tabBar.classList.add('mdc-tab-bar--scroll');
+        self.tabBar.classList.remove('mdc-tab-bar--fixed');
+
+        self.content.classList.remove('content--fixed');
+      }
+    })
   }
 
   private updateCart() {
