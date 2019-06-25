@@ -21,10 +21,18 @@ export interface Movie {
 export class AppComponent {
 
   title = 'mat-xd-test';
+  public slideOpts = {
+    initialSlide: 2,
+    speed: 400,
+    slidesPerView: 1,
+    autoplay: false,
+    spaceBetween: 0,
+  };
   private appTabBar: HTMLElement;
   private counter: number = 0;
   private content: HTMLElement;
   private tabBar: HTMLElement;
+  
 
 
   constructor(

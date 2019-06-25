@@ -1,5 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { FormsModule } from '@angular/forms'
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -19,7 +19,8 @@ import { TabBarComponent } from './components/tab-bar/tab-bar.component';
 import { HeaderComponent } from './components/header/header.component';
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { FlexLayoutModule } from '@angular/flex-layout';
-import { ThemeSelectorDropdownComponent } from './components/theme-selector-dropdown/theme-selector-dropdown.component'
+import { ThemeSelectorDropdownComponent } from './components/theme-selector-dropdown/theme-selector-dropdown.component';
+import { IonicModule } from "@ionic/angular"
 
 
 @NgModule({
@@ -41,6 +42,7 @@ import { ThemeSelectorDropdownComponent } from './components/theme-selector-drop
     AppRoutingModule,
     BrowserAnimationsModule,
     FormsModule,
+    IonicModule.forRoot(),
     AngularFireModule.initializeApp({...environment.firebase}),
     AngularFirestoreModule,
     IonicStorageModule.forRoot(),
@@ -50,6 +52,7 @@ import { ThemeSelectorDropdownComponent } from './components/theme-selector-drop
   providers: [
     { provide: FirebaseOptionsToken, useValue: environment.firebase }
   ],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
 export class AppModule { }

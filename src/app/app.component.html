@@ -1,3 +1,12 @@
 <app-header></app-header>
 <app-tab-bar></app-tab-bar>
-<router-outlet></router-outlet>
+
+
+<ion-slides pager="true" [options]="slideOpts">
+    <ion-slide>
+        <app-home></app-home>
+    </ion-slide>
+    <ion-slide>
+        <app-all-movies></app-all-movies>
+    </ion-slide>
+</ion-slides>
