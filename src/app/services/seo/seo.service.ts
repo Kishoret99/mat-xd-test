@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Meta, MetaDefinition, Title } from '@angular/platform-browser';
-import { Seo, MetaDefinitions, TAGS} from '../../entities' 
+import { Seo, MetaDefinitions, TAGS} from '../../entities';
+import { Utils } from '../../utils/utils';
 
 @Injectable({
   providedIn: 'root'
@@ -16,7 +17,7 @@ export class SeoService {
 
   populate(partialSeo: Partial<Seo>) {
     if(!partialSeo) return;
-    this.setTitle(partialSeo.title);
+    this.setTitle(Utils.getKeyValueOrReturnDefault(partialSeo, 'title', 'Telugu Lyrics - Lyrk'));
     
     const seo: Seo = this.buildEntity(partialSeo);
     this.setMetaTags(seo);
@@ -25,12 +26,12 @@ export class SeoService {
   private buildEntity(partialSeo: Partial<Seo>): Seo {
 
     const seo: Seo = {
-      description: partialSeo.description,
-      image: partialSeo.image,
-      "og:title": partialSeo.title,
-      "og:description": partialSeo.description,
-      "og:image": partialSeo.image,
-      ...partialSeo
+      ...partialSeo,
+      description: Utils.getKeyValueOrReturnDefault(partialSeo, 'description', ''),
+      image: Utils.getKeyValueOrReturnDefault(partialSeo, 'image', 'https://lyrk.co.in/favicon.ico'),
+      "og:title": Utils.getKeyValueOrReturnDefault(partialSeo, 'title', ''),
+      "og:description": Utils.getKeyValueOrReturnDefault(partialSeo, 'description', ''),
+      "og:image": Utils.getKeyValueOrReturnDefault(partialSeo, 'image', 'https://lyrk.co.in/favicon.ico')
     };
     return seo;
   }
