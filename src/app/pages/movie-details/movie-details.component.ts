@@ -1,8 +1,9 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { AngularFirestore, AngularFirestoreCollection, AngularFirestoreDocument} from '@angular/fire/firestore';
+import { Location } from '@angular/common';
 import { Router, ActivatedRoute } from '@angular/router';
-import { Movie, Song, SongWithId } from '../../entities';
+import { AngularFirestore, AngularFirestoreCollection, AngularFirestoreDocument} from '@angular/fire/firestore';
 import { map } from 'rxjs/operators';
+import { Movie, Song, SongWithId } from '../../entities';
 import { SeoService } from '../../services/seo'
 
 @Component({
@@ -21,9 +22,10 @@ export class MovieDetailsComponent implements OnInit {
   private songsCollection: AngularFirestoreCollection<Song>;
 
   constructor(
-    private afs: AngularFirestore,
-    private router: Router,
     private activateRoute: ActivatedRoute,
+    private afs: AngularFirestore,
+    private location: Location,
+    private router: Router,
     private seoSerive: SeoService
   ) { }
 
@@ -52,4 +54,7 @@ export class MovieDetailsComponent implements OnInit {
     })
   }
 
+  onBack() {
+    this.location.back();
+  }
 }

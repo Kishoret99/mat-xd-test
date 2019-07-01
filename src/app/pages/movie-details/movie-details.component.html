@@ -1,6 +1,7 @@
 <div class="movie-details">
 	<div  ngClass.gt-xs="automargin mat-elevation-z6" fxLayout.xs="column" fxLayout.gt-xs="row">
 		<div class="imageholder" ngClass.gt-xs="alignleft" *ngIf="movie">
+			<span (click)="onBack()" class="material-icons mdc-top-app-bar__action-item imageholder__backbutton" aria-label="Print this page">keyboard_backspace</span>
 			<img class="image" src="{{movie?.imageUrl}}" alt="{{movie?.title}}">
 		</div>
 		<div ngClass.gt-xs="alignright">

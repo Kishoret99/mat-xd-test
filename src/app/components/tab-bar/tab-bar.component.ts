@@ -1,8 +1,7 @@
 import { Component, OnInit, ElementRef, Inject, PLATFORM_ID } from '@angular/core';
-import { isPlatformBrowser, DOCUMENT, isPlatformServer } from '@angular/common';
-import { Router, ActivatedRoute } from '@angular/router';
+import { isPlatformServer, Location } from '@angular/common';
+import { Router, NavigationEnd, ActivatedRoute } from '@angular/router';
 import { MDCTabBar } from '@material/tab-bar';
-import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-tab-bar',
@@ -12,10 +11,9 @@ import { Subscription } from 'rxjs';
 export class TabBarComponent implements OnInit {
 
   matTabBar: MDCTabBar;
-  routeSubcription: Subscription
   constructor(
     public elementRef: ElementRef,
-    private activateRoute: ActivatedRoute,
+    private location: Location,
     @Inject(PLATFORM_ID) private platformId: Object
     ) { }
 
@@ -26,23 +24,16 @@ export class TabBarComponent implements OnInit {
     if(isPlatformServer(this.platformId)) return
     const tab: Element = this.elementRef.nativeElement.querySelector('.mdc-tab-bar');
     this.matTabBar = new MDCTabBar(tab);
-    this.routeSubcription = this.activateRoute.url.subscribe(url => {
-      let tabIndex = 0;
-      if(url[0].path == 'movies') tabIndex = 1;
-      this.matTabBar.activateTab(tabIndex);
-    })
+    const path = this.location.path();
+    if(path === '/home') {
+      this.matTabBar.activateTab(0) 
+    } else if(path === '/movies') {
+      this.matTabBar.activateTab(1);
+    }
   }
-
-  onTabClick(tabIndex) {
-    console.log('clicked', tabIndex);
-  }
-
-
 
   ngOnDestroy() {
     if(isPlatformServer(this.platformId)) return
     this.matTabBar.destroy();
-    this.routeSubcription.unsubscribe();
   }
-
 }

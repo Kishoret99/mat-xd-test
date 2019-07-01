@@ -1,3 +1,3 @@
-<app-header></app-header>
-<app-tab-bar></app-tab-bar>
+<app-header *ngIf="showHeader"></app-header>
+<app-tab-bar *ngIf="showHeader" ></app-tab-bar>
 <router-outlet></router-outlet>

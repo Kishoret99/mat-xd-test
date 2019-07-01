@@ -6,6 +6,7 @@ import { map, mergeMap } from 'rxjs/operators';
 import { isPlatformBrowser, DOCUMENT } from '@angular/common';
 import { SwUpdate } from '@angular/service-worker';
 import { environment } from '../environments/environment';
+import { ActivatedRoute, Router, NavigationEnd } from '@angular/router';
 // import { StoreService } from './services/store'
 
 
@@ -20,7 +21,8 @@ export interface Movie {
 })
 export class AppComponent {
 
-  title = 'mat-xd-test';
+  public showHeader: boolean = false;
+  public title = 'mat-xd-test';
   private appTabBar: HTMLElement;
   private counter: number = 0;
   private content: HTMLElement;
@@ -29,6 +31,7 @@ export class AppComponent {
 
   constructor(
     private db: AngularFirestore,
+    private router: Router,
     private swUpdate: SwUpdate,
     @Inject(PLATFORM_ID) private platformId: Object,
     @Inject(DOCUMENT) private doc
@@ -55,6 +58,18 @@ export class AppComponent {
             // ...
         }
       });
+      this.router.events.subscribe(url => {
+        if(url instanceof NavigationEnd) {
+          if(url.urlAfterRedirects == '/home' || url.urlAfterRedirects == '/movies')  {
+            this.showHeader = true;
+            if(!isPlatformServer(this.platformId))  {
+              setTimeout(this.tabScrollAnimation(this), 500);
+            };
+          } else {
+            this.showHeader = false;
+          }
+        }
+      })
     } else {
       this.gtmScript();
     }
@@ -73,32 +88,36 @@ export class AppComponent {
 
   ngAfterViewInit() {
     if(isPlatformServer(this.platformId)) return;
-    this.appTabBar = this.doc.querySelector('.mdc-top-app-bar');
-    this.tabBar = this.doc.querySelector('.mdc-tab-bar');
-    // this.content = this.doc.querySelector('.content');
-    const self = this;
-    let scrollPosition = window.pageYOffset;
-    const offset = this.tabBar.offsetTop
-    window.addEventListener('scroll', () => {
-      self.content = self.doc.querySelector('.content');
-      if(window.pageYOffset > offset) {
-        // self.appTabBar.classList.remove('mdc-top-app-bar--scroll');
-        // self.appTabBar.classList.add('mdc-top-app-bar--hide');
+  }
 
-        self.tabBar.classList.remove('mdc-tab-bar--scroll');
-        self.tabBar.classList.add('mdc-tab-bar--fixed');
-
-        self.content.classList.add('content--fixed');
-      } else {
-        // self.appTabBar.classList.add('mdc-top-app-bar--scroll');
-        // self.appTabBar.classList.remove('mdc-top-app-bar--hide');
-
-        self.tabBar.classList.add('mdc-tab-bar--scroll');
-        self.tabBar.classList.remove('mdc-tab-bar--fixed');
-
-        self.content.classList.remove('content--fixed');
-      }
-    })
+  tabScrollAnimation(self) {
+    return function() {
+      self.appTabBar = self.doc.querySelector('.mdc-top-app-bar');
+      self.tabBar = self.doc.querySelector('.mdc-tab-bar');
+      // this.content = this.doc.querySelector('.content');
+      let scrollPosition = window.pageYOffset;
+      const offset = self.tabBar.offsetTop
+      window.addEventListener('scroll', () => {
+        self.content = self.doc.querySelector('.content');
+        if(window.pageYOffset > offset) {
+          // self.appTabBar.classList.remove('mdc-top-app-bar--scroll');
+          // self.appTabBar.classList.add('mdc-top-app-bar--hide');
+  
+          self.tabBar.classList.remove('mdc-tab-bar--scroll');
+          self.tabBar.classList.add('mdc-tab-bar--fixed');
+  
+          self.content.classList.add('content--fixed');
+        } else {
+          // self.appTabBar.classList.add('mdc-top-app-bar--scroll');
+          // self.appTabBar.classList.remove('mdc-top-app-bar--hide');
+  
+          self.tabBar.classList.add('mdc-tab-bar--scroll');
+          self.tabBar.classList.remove('mdc-tab-bar--fixed');
+  
+          self.content.classList.remove('content--fixed');
+        }
+      })
+    }
   }
 
   private updateCart() {
