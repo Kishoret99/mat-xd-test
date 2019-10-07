@@ -6,7 +6,6 @@
     "module": "esNext"
   },
   "exclude": [
-    "test.ts",
     "**/*.spec.ts"
   ]
 }
