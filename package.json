@@ -54,6 +54,7 @@
     "@angular-devkit/build-angular": "^0.800.2",
     "@angular/cli": "~8.0.2",
     "@angular/compiler-cli": "~8.0.0",
+    "@ngneat/spectator": "^4.3.2",
     "@nguniversal/express-engine": "^7.1.1",
     "@nguniversal/module-map-ngfactory-loader": "0.0.0",
     "@ngx-pwa/ngsw-schema": "^1.0.2",
