@@ -7,7 +7,8 @@ import { isPlatformBrowser, DOCUMENT } from '@angular/common';
 import { SwUpdate } from '@angular/service-worker';
 import { environment } from '../environments/environment';
 import { ActivatedRoute, Router, NavigationEnd } from '@angular/router';
-// import { StoreService } from './services/store'
+import { StoreService } from './services/store'
+import { CurrentlyPlaying } from './services/store/store.service';
 
 
 export interface Movie {
@@ -29,24 +30,36 @@ export class AppComponent {
   private tabBar: HTMLElement;
 
 
+  public inputValue: CurrentlyPlaying;
+
+
   constructor(
     private db: AngularFirestore,
     private router: Router,
     private swUpdate: SwUpdate,
     @Inject(PLATFORM_ID) private platformId: Object,
-    @Inject(DOCUMENT) private doc
-    // private store: StoreService
+    @Inject(DOCUMENT) private doc,
+    private store: StoreService
   ) {}
 
 
   ngOnInit() {
-    // this.store.subscribe('cart').subscribe(cart => {
-    //   console.log('> cart', cart);
-    //   this.counter = cart;
-    //   console.log('> counter', this.counter);
-    // })
+    this.store.state.subscribe(state => {
+      console.log(state);
+    })
+    setInterval(() => {
+      const currentlyPlaying = new CurrentlyPlaying();
+      currentlyPlaying.movieName = Math.random().toString();
+      currentlyPlaying.singerDetails = Math.random().toString();
+      currentlyPlaying.songName = Math.random().toString();
+      this.store.currentlyPlaying =  currentlyPlaying;
+    }, 5000)
     
     if (isPlatformBrowser(this.platformId)) {
+      this.db.firestore.settings({
+        host: "localhost:8082",
+        ssl: false
+      })
       this.db.firestore.enablePersistence().catch(function(err) {
         if (err.code == 'failed-precondition') {
             // Multiple tabs open, persistence can only be enabled
@@ -94,6 +107,7 @@ export class AppComponent {
     return function() {
       self.appTabBar = self.doc.querySelector('.mdc-top-app-bar');
       self.tabBar = self.doc.querySelector('.mdc-tab-bar');
+      if(!self.tabBar || !self.appTabBar) return
       // this.content = this.doc.querySelector('.content');
       let scrollPosition = window.pageYOffset;
       const offset = self.tabBar.offsetTop
@@ -120,10 +134,9 @@ export class AppComponent {
     }
   }
 
-  private updateCart() {
-    console.log('> please', this.counter++)
-
-    // this.store.publish('cart', this.counter++);
+  public updateState() {
+    console.log('> currently playing', this.inputValue);
+    this.store.currentlyPlaying = this.inputValue;
   }
 
   private gtmScript() {
@@ -137,5 +150,9 @@ export class AppComponent {
     element.innerHTML = innerHtml;
     const head = this.doc.getElementsByTagName('head')[0]
     head.appendChild(element);
+  }
+
+  clickme() {
+    console.log('hello');
   }
 }

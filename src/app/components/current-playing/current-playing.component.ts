@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { StoreService } from 'src/app/services/store';
 
 @Component({
   selector: 'app-current-playing',
@@ -7,7 +8,9 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CurrentPlayingComponent implements OnInit {
 
-  constructor() { }
+  constructor(
+    private store: StoreService
+  ) { }
 
   ngOnInit() {
   }

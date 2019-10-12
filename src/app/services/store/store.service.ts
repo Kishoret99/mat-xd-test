@@ -1,17 +1,24 @@
 import { Injectable } from '@angular/core';
 import { Storage } from '@ionic/storage';
 import { BehaviorSubject, Observable, from } from 'rxjs';
-import { flatMap } from 'rxjs/operators'
+import { flatMap } from 'rxjs/operators';
+
+export const APP_STATE_KEY = 'APP_STATE'
+export class CurrentlyPlaying {
+  songName: string;
+  movieName: string;
+  singerDetails: string;
+}
+export class State {
+  currentlyPlaying: CurrentlyPlaying;
+}
 
 @Injectable({
   providedIn: 'root'
 })
 export class StoreService {
 
-  private store: Map<String, BehaviorSubject<any>> = new Map();
-  private initialValues = {
-    cart: 0
-  }
+  private _state: BehaviorSubject<State>;
 
   constructor(
     private storage: Storage
@@ -19,27 +26,42 @@ export class StoreService {
 
   }
 
-  subscribe(key): Observable<any> {
-    
-    if(!this.store.has(key)) {
-      return from(this.storage.get(key)).pipe(flatMap(value => {
-        if(value == null) value = this.initialValues[key];
-        this.store.set(key, new BehaviorSubject(value));
-        return this.store.get(key).asObservable()
-      }));
+  get state(): Observable<State> {
+    if(!this._state) {
+      return from(this.storage.get(APP_STATE_KEY)).pipe(flatMap((persistedState: State) => {
+        if(!persistedState) {
+          const initialState: State = new State(); 
+          this._state = new BehaviorSubject(initialState);
+          this.storage.set(APP_STATE_KEY, initialState);
+          return this._state.asObservable();
+        };
+        this._state = new BehaviorSubject(persistedState);
+        return this._state.asObservable();
+      }))
     }
-
-    return this.store.get(key).asObservable();
+    return this._state.asObservable();
   }
 
-  publish(key, value) {
+  public set currentlyPlaying(currentlyPlaying: CurrentlyPlaying) {
+    const oldState = this.getMemoizedState();
+    const newState: State = {...oldState, currentlyPlaying};
+    this.updateState(newState);
+  }
 
-    if(!this.store.has(key)) {
-      this.store.set(key, new BehaviorSubject(value));
-      this.storage.set(key, value);
+
+  private getMemoizedState(): State {
+
+    if(!this._state) {
+      const initialState: State = new State(); 
+      this._state = new BehaviorSubject(initialState);
     }
 
-    this.store.get(key).next(value);
-    this.storage.set(key, value);
+    const state = this._state.getValue();
+    return state;
+  }
+
+  private updateState(state: State) {
+    this._state.next(state);
+    this.storage.set(APP_STATE_KEY, state);
   }
 }
