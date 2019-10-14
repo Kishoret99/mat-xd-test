@@ -27,7 +27,7 @@ import { ServiceWorkerModule } from '@angular/service-worker';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { ThemeSelectorDropdownComponent } from './components/theme-selector-dropdown/theme-selector-dropdown.component'
 
-
+import {appStateProvider} from './app.store'
 @NgModule({
   declarations: [
     AppComponent,
@@ -59,6 +59,7 @@ import { ThemeSelectorDropdownComponent } from './components/theme-selector-drop
   ],
   providers: [
     { provide: FirebaseOptionsToken, useValue: environment.firebase },
+    appStateProvider
   ],
   bootstrap: [AppComponent]
 })

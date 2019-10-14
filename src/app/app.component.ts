@@ -7,6 +7,8 @@ import { isPlatformBrowser, DOCUMENT } from '@angular/common';
 import { SwUpdate } from '@angular/service-worker';
 import { environment } from '../environments/environment';
 import { ActivatedRoute, Router, NavigationEnd } from '@angular/router';
+import { APP_STATE, Store } from './store/core';
+import * as TODO_ACTIONS from './store/todos/actions';
 // import { StoreService } from './services/store'
 
 
@@ -27,6 +29,7 @@ export class AppComponent {
   private counter: number = 0;
   private content: HTMLElement;
   private tabBar: HTMLElement;
+  public textInput: string = 'Hello';
 
 
   constructor(
@@ -34,18 +37,20 @@ export class AppComponent {
     private router: Router,
     private swUpdate: SwUpdate,
     @Inject(PLATFORM_ID) private platformId: Object,
-    @Inject(DOCUMENT) private doc
+    @Inject(DOCUMENT) private doc,
+    @Inject(APP_STATE) private store: Store,
     // private store: StoreService
   ) {}
 
 
   ngOnInit() {
+    
     // this.store.subscribe('cart').subscribe(cart => {
     //   console.log('> cart', cart);
     //   this.counter = cart;
     //   console.log('> counter', this.counter);
     // })
-    
+    console.log('kishore', this.store.getState())
     if (isPlatformBrowser(this.platformId)) {
       this.db.firestore.enablePersistence().catch(function(err) {
         if (err.code == 'failed-precondition') {
@@ -137,5 +142,15 @@ export class AppComponent {
     element.innerHTML = innerHtml;
     const head = this.doc.getElementsByTagName('head')[0]
     head.appendChild(element);
+  }
+
+
+  handleclick() {
+    this.store.dispatch(TODO_ACTIONS.addToDoAction(this.textInput));
+  }
+
+  handleclick2() {
+    // console.log(this.textInput);
+    this.store.dispatch(TODO_ACTIONS.addToDoAsyncAction());
   }
 }
