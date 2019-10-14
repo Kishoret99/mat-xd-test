@@ -1,4 +1,10 @@
 export const devToolsMiddleware = config => {
+    const extension = (window as any).__REDUX_DEVTOOLS_EXTENSION__;
+    if(!extension) {
+      return (store) => next => action => {
+        next(action);
+      }
+    }
     const devTools = (window as any).__REDUX_DEVTOOLS_EXTENSION__.connect(config);
     return store => {
       devTools.subscribe(message => {

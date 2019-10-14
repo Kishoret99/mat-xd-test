@@ -9,6 +9,7 @@ import { environment } from '../environments/environment';
 import { ActivatedRoute, Router, NavigationEnd } from '@angular/router';
 import { APP_STATE, Store } from './store/core';
 import * as TODO_ACTIONS from './store/todos/actions';
+import * as BANNERS_ACTIONS from './store/banners/actions';
 // import { StoreService } from './services/store'
 
 
@@ -152,5 +153,9 @@ export class AppComponent {
   handleclick2() {
     // console.log(this.textInput);
     this.store.dispatch(TODO_ACTIONS.addToDoAsyncAction());
+  }
+
+  handleGetBanners() {
+    this.store.dispatch(BANNERS_ACTIONS.getBannersRequestAction())
   }
 }
