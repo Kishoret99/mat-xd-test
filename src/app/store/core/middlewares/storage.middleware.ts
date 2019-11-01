@@ -9,7 +9,7 @@ export const storageMiddleware = (storage: Storage) => store => next => action =
 
 export const getStateFromStorage = async (storage: Storage) => {
     const state = await storage.get(APP_STATE_KEY);
-    return state;
+    return {...state, router: null};
 }
 
 export const SAVED_APP_STATE = new InjectionToken('SAVED_APP_STATE');

@@ -20,7 +20,7 @@ document.addEventListener('DOMContentLoaded', async () => {
   const savedAppState = await storage.get(APP_STATE_KEY);
   platformBrowserDynamic(
     [
-      {provide: SAVED_APP_STATE, useValue: savedAppState},
+      {provide: SAVED_APP_STATE, useValue: {...savedAppState, router: null}},
     ]
   ).bootstrapModule(AppModule)
   .catch(err => console.error(err));

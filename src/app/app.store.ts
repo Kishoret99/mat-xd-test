@@ -1,6 +1,6 @@
 import {
-  createStore, 
-  combineReducers, 
+  createStore,
+  combineReducers,
   applyMiddlewares,
   APP_STATE
 } from './store/core';
@@ -21,7 +21,7 @@ import { Router } from '@angular/router';
 
 
 function createStoreFactory(
-  storage: Storage, 
+  storage: Storage,
   savedState,
   router: Router
   ) {
@@ -31,10 +31,15 @@ function createStoreFactory(
 
   const store =  createStore(
     combineReducers(reducers),
-    initialState, 
-    applyMiddlewares( routerMiddleware(router) ,storageMiddleware(storage), loggerMiddleware, devToolsMiddleware({}), effectsMiddleware(...effects))
-    )
-  return store;  
+    initialState,
+    applyMiddlewares(
+      routerMiddleware(router, true),
+      storageMiddleware(storage),
+      loggerMiddleware,
+      devToolsMiddleware({}),
+      effectsMiddleware(...effects))
+    );
+  return store;
 }
 
-export const appStateProvider: Provider = {provide: APP_STATE, useFactory: createStoreFactory, deps: [Storage, SAVED_APP_STATE, Router]}
+export const appStateProvider: Provider = {provide: APP_STATE, useFactory: createStoreFactory, deps: [Storage, SAVED_APP_STATE, Router]};
