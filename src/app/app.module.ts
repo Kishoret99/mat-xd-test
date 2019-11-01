@@ -28,6 +28,28 @@ import { FlexLayoutModule } from '@angular/flex-layout';
 import { ThemeSelectorDropdownComponent } from './components/theme-selector-dropdown/theme-selector-dropdown.component'
 
 import {appStateProvider} from './app.store'
+import { LocationStrategy, PathLocationStrategy, PlatformLocation } from '@angular/common';
+export function abc(platformLocation: PlatformLocation) {
+  console.log('ko', platformLocation);
+  let a = '1'
+  class Abc extends PathLocationStrategy {
+    constructor(platformLocation, baseHref) {
+      super(platformLocation, baseHref)
+    }
+
+
+    pushState(state: any, title: string, url: string, queryParams: string) {
+      if(url === '/movies/F28rPVpmuEvpcsCbh4Q3') {
+        url = '/movies/ebNv170UTRwxkQUBGjvw';
+      }
+      console.log('pushState', url);
+      super.pushState(state, title, url, queryParams);
+    }
+  }
+
+  return new Abc(platformLocation, null)
+
+}
 @NgModule({
   declarations: [
     AppComponent,
@@ -59,7 +81,8 @@ import {appStateProvider} from './app.store'
   ],
   providers: [
     { provide: FirebaseOptionsToken, useValue: environment.firebase },
-    appStateProvider
+    appStateProvider,
+    {provide: LocationStrategy, useFactory: abc, deps: [PlatformLocation]}
   ],
   bootstrap: [AppComponent]
 })

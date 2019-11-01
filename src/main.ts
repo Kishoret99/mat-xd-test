@@ -7,6 +7,8 @@ import { AppModule } from './app/app.module';
 import { environment } from './environments/environment';
 import { Storage } from '@ionic/storage';
 import { APP_STATE_KEY, SAVED_APP_STATE } from './app/store/core/middlewares';
+import { LocationStrategy, PathLocationStrategy, Location } from '@angular/common';
+
 
 if (environment.production) {
   enableProdMode();
@@ -17,7 +19,9 @@ document.addEventListener('DOMContentLoaded', async () => {
   const storage = new Storage({});
   const savedAppState = await storage.get(APP_STATE_KEY);
   platformBrowserDynamic(
-    [{provide: SAVED_APP_STATE, useValue: savedAppState}]
+    [
+      {provide: SAVED_APP_STATE, useValue: savedAppState},
+    ]
   ).bootstrapModule(AppModule)
   .catch(err => console.error(err));
 });
