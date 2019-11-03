@@ -40,7 +40,6 @@ export class LyricDetailsComponent implements OnInit {
         this.lyricDocument.valueChanges().subscribe(lyric => {
           this.lyric = lyric;
           this.lyricLines = this.lyric.lyrics.split('\\n');
-          console.log('>', this.lyricLines);
         })
       }
     })

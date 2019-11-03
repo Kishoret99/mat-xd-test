@@ -1,5 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import { NgModule, ChangeDetectorRef } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -25,21 +25,26 @@ import { MatIconModule } from '@angular/material/icon';
 
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { FlexLayoutModule } from '@angular/flex-layout';
-import { ThemeSelectorDropdownComponent } from './components/theme-selector-dropdown/theme-selector-dropdown.component'
+import { ThemeSelectorDropdownComponent } from './components/theme-selector-dropdown/theme-selector-dropdown.component';
 
-import {appStateProvider} from './app.store'
+import {appStateProvider} from './app.store';
 import { LocationStrategy, PathLocationStrategy, PlatformLocation } from '@angular/common';
+
+
+import { TranslatePipe, Config, TRANSLATION_CONFIG, DEFAULT_LANGAUAGE, TranslationModule} from './store/translate';
+import { EffectsModule } from './store/reducer';
+
+
 export function abc(platformLocation: PlatformLocation) {
-  console.log('ko', platformLocation);
-  let a = '1'
+  const a = '1';
   class Abc extends PathLocationStrategy {
     constructor(platformLocation, baseHref) {
-      super(platformLocation, baseHref)
+      super(platformLocation, baseHref);
     }
 
 
     pushState(state: any, title: string, url: string, queryParams: string) {
-      if(url === '/movies/F28rPVpmuEvpcsCbh4Q3') {
+      if (url === '/movies/F28rPVpmuEvpcsCbh4Q3') {
         url = '/movies/ebNv170UTRwxkQUBGjvw';
       }
       console.log('pushState', url);
@@ -47,8 +52,25 @@ export function abc(platformLocation: PlatformLocation) {
     }
   }
 
-  return new Abc(platformLocation, null)
+  return new Abc(platformLocation, null);
 
+}
+
+export function gettranslationConfig(): Config {
+  return [
+    {
+      code: 'en',
+      translations: {
+        'hello': 'HELLO in english'
+      }
+    },
+    {
+      code: 'te',
+      translations: {
+        'hello': 'హలో'
+      }
+    }
+  ];
 }
 @NgModule({
   declarations: [
@@ -78,11 +100,17 @@ export function abc(platformLocation: PlatformLocation) {
     FlexLayoutModule.withConfig({ssrObserveBreakpoints: ['xs', 'gt-xs']}),
     MatProgressBarModule,
     MatIconModule,
+    TranslationModule.forRoot(),
+    EffectsModule.forRoot()
   ],
   providers: [
-    { provide: FirebaseOptionsToken, useValue: environment.firebase },
     appStateProvider,
-    {provide: LocationStrategy, useFactory: abc, deps: [PlatformLocation]}
+    // TranslatePipe,
+    {provide: FirebaseOptionsToken, useValue: environment.firebase },
+    {provide: LocationStrategy, useFactory: abc, deps: [PlatformLocation]},
+    {provide: TRANSLATION_CONFIG, useFactory: gettranslationConfig},
+    {provide: DEFAULT_LANGAUAGE, useValue: 'en'},
+
   ],
   bootstrap: [AppComponent]
 })

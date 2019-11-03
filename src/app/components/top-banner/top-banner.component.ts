@@ -30,9 +30,6 @@ export class TopBannerComponent implements OnInit {
   ngOnInit() {
     this.bannersCollection = this.afs.collection(this.bannersCollectionName);
     this.banners = this.bannersCollection.valueChanges();
-    this.banners.subscribe(test => {
-      console.log(test);
-    })
   }
 
   navigateTo(banner: BannerDoc) {

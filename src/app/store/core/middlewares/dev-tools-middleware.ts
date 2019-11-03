@@ -8,7 +8,6 @@ export const devToolsMiddleware = config => {
     const devTools = (window as any).__REDUX_DEVTOOLS_EXTENSION__.connect(config);
     return store => {
       devTools.subscribe(message => {
-        console.log(message.type, message)
         switch (message.type) {
           case "ACTION": {
             const action = JSON.parse(message.payload);
@@ -22,7 +21,6 @@ export const devToolsMiddleware = config => {
             break;
           }
           default:
-            //console.log(message);
         }
       });
       return next => action => {

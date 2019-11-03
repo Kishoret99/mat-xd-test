@@ -1,8 +1,8 @@
-import { Component, PLATFORM_ID, Inject } from '@angular/core';
+import { Component, PLATFORM_ID, Inject, ChangeDetectorRef, NgZone, ApplicationRef } from '@angular/core';
 import { isPlatformServer } from '@angular/common';
 import { AngularFirestore, AngularFirestoreDocument } from '@angular/fire/firestore'
 import { Observable, from } from 'rxjs';
-import { map, mergeMap } from 'rxjs/operators';
+import { map, mergeMap, take, distinctUntilChanged } from 'rxjs/operators';
 import { isPlatformBrowser, DOCUMENT } from '@angular/common';
 import { SwUpdate } from '@angular/service-worker';
 import { environment } from '../environments/environment';
@@ -10,7 +10,9 @@ import { ActivatedRoute, Router, NavigationEnd } from '@angular/router';
 import { APP_STATE, Store } from './store/core';
 import * as TODO_ACTIONS from './store/todos/actions';
 import * as BANNERS_ACTIONS from './store/banners/actions';
+import * as TRANSLATE_ACTIONS from './store/translate/actions';
 // import { StoreService } from './services/store'
+
 
 
 export interface Movie {
@@ -31,9 +33,21 @@ export class AppComponent {
   private content: HTMLElement;
   private tabBar: HTMLElement;
   public textInput: string = 'Hello';
-
+  public languageObs$: any;
+  public lang;
+  public messages = {
+    en: {
+      hello: "HELLLLLLO"
+    },
+    te: {
+      hello: "హలో"
+    }
+  };
 
   constructor(
+    private detection: ChangeDetectorRef,
+    private ngZone: NgZone,
+    private applicationRef: ApplicationRef,
     private db: AngularFirestore,
     private router: Router,
     private swUpdate: SwUpdate,
@@ -51,7 +65,6 @@ export class AppComponent {
     //   this.counter = cart;
     //   console.log('> counter', this.counter);
     // })
-    console.log('kishore', this.store.getState())
     if (isPlatformBrowser(this.platformId)) {
       this.db.firestore.enablePersistence().catch(function(err) {
         if (err.code == 'failed-precondition') {
@@ -69,7 +82,7 @@ export class AppComponent {
           if(url.urlAfterRedirects == '/home' || url.urlAfterRedirects == '/movies')  {
             this.showHeader = true;
             if(!isPlatformServer(this.platformId))  {
-              setTimeout(this.tabScrollAnimation(this), 500);
+              // setTimeout(this.tabScrollAnimation(this), 500);
             };
           } else {
             this.showHeader = false;
@@ -90,6 +103,7 @@ export class AppComponent {
     this.swUpdate.activated.subscribe( updateAvailableEvent=> {
       console.log('> Update activated events', updateAvailableEvent);
     });
+    this.languageObs$ = this.store.select(store => store.language);  
   }
 
   ngAfterViewInit() {
@@ -157,5 +171,12 @@ export class AppComponent {
 
   handleGetBanners() {
     this.store.dispatch(BANNERS_ACTIONS.getBannersRequestAction())
+  }
+
+  switchLanguage() {
+    this.store.select(state => state.language).pipe(take(1)).subscribe(language => {
+      const switchTo = language === 'en' ? 'te' : 'en';
+      this.store.dispatch(TRANSLATE_ACTIONS.switchLanguageAction(switchTo));
+    });
   }
 }

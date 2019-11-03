@@ -11,19 +11,23 @@ import {
   effectsMiddleware,
   storageMiddleware,
   SAVED_APP_STATE,
-  routerMiddleware
+  ACTIONS,
+  routerMiddleware,
+  actions$
 } from './store/core/middlewares';
 
-import { reducers, effects } from './store/reducer';
+import { reducers } from './store/reducer';
 import { Provider } from '@angular/core';
 import { Storage } from '@ionic/storage';
 import { Router } from '@angular/router';
+import { EffectsService } from './store/reducer';
 
 
-function createStoreFactory(
+export function createStoreFactory(
   storage: Storage,
   savedState,
-  router: Router
+  router: Router,
+  effectsService: EffectsService
   ) {
   const initialState =  savedState ||  {
     todos: []
@@ -37,9 +41,18 @@ function createStoreFactory(
       storageMiddleware(storage),
       loggerMiddleware,
       devToolsMiddleware({}),
-      effectsMiddleware(...effects))
+      effectsMiddleware(...effectsService.getEffects()))
     );
   return store;
 }
 
-export const appStateProvider: Provider = {provide: APP_STATE, useFactory: createStoreFactory, deps: [Storage, SAVED_APP_STATE, Router]};
+export const appStateProvider: Provider = {
+  provide: APP_STATE,
+  useFactory: createStoreFactory,
+  deps: [
+    Storage,
+    SAVED_APP_STATE,
+    Router,
+    EffectsService
+  ]
+};

@@ -8,6 +8,8 @@ import { LyricDetailsComponent } from './pages/lyric-details/lyric-details.compo
 const routes: Routes = [
   {path: '', redirectTo: 'home', pathMatch: 'full' },
   {path: 'home', component: HomeComponent },
+  {path: 'en/home', component: HomeComponent },
+  {path: 'te/home', component: HomeComponent },
   {path: 'movies', component: AllMoviesComponent },
   {path: 'movies/:movieName', component: MovieDetailsComponent},
   {path: 'movies/:movieName/lyrics/:songName', component: LyricDetailsComponent},
@@ -21,7 +23,6 @@ const routes: Routes = [
         // enableTracing: true,
         scrollPositionRestoration: 'enabled'
       }),
-    
   ],
   exports: [RouterModule]
 })
