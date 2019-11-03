@@ -1,5 +1,5 @@
 import { BehaviorSubject } from "rxjs";
-import { pluck, map } from "rxjs/operators";
+import { pluck, map, distinctUntilChanged } from "rxjs/operators";
 import { InjectionToken } from '@angular/core';
 
 export interface AppState {
@@ -29,7 +29,7 @@ export class Store {
    */
   select(...selectors) {
     if(selectors && selectors.length === 1 && typeof selectors[0] === 'function') {
-      return this.state.pipe(map(selectors[0]));
+      return this.state.pipe(map(selectors[0]), distinctUntilChanged());
     } else {
       return this.state.pipe(pluck(...selectors));
     }
