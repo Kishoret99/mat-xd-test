@@ -51,7 +51,7 @@
     "zone.js": "~0.9.1"
   },
   "devDependencies": {
-    "@angular-devkit/build-angular": "^0.800.2",
+    "@angular-devkit/build-angular": "^15.0.0",
     "@angular/cli": "~8.0.2",
     "@angular/compiler-cli": "~8.0.0",
     "@ngneat/spectator": "^4.3.2",
@@ -81,7 +81,7 @@
     "typescript": "~3.4.5",
     "utf-8-validate": "^5.0.2",
     "webpack-bundle-analyzer": "^3.3.2",
-    "webpack-cli": "^3.3.2",
+    "webpack-cli": "^3.3.12",
     "ws": "^7.0.0",
     "xhr2": "^0.1.4",
     "xmlhttprequest": "^1.8.0"
