@@ -23,6 +23,6 @@
   },
   "homepage": "https://github.com/Kishoret99/mat-xd-test#readme",
   "dependencies": {
-    "firebase-admin": "^8.2.0"
+    "firebase-admin": "^11.4.1"
   }
 }
